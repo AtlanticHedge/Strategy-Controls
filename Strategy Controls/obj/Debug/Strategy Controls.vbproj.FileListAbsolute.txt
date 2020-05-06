@@ -8,3 +8,13 @@ C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Stra
 C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.exe
 C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.xml
 C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.pdb
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\bin\Debug\Strategy Controls.exe.config
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy Controls.exe
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy Controls.xml
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy Controls.pdb
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\bin\Debug\Strategy Controls.exe
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\bin\Debug\Strategy Controls.pdb
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\bin\Debug\Strategy Controls.xml
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy_Controls.Form1.resources
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy_Controls.Resources.resources
+D:\Dropbox\Dropbox (Atlantic Hedge)\Trading\Software\Visual Baisc Projects\Controls\Strategy Controls\Strategy Controls\obj\Debug\Strategy Controls.vbproj.GenerateResource.Cache

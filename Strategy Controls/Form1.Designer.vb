@@ -32,13 +32,12 @@ Partial Class Form1
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.StratList = New System.Windows.Forms.ListBox()
+        Me.Strategies1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet11 = New Strategy_Controls.DataSet1()
         Me.DataSet1 = New Strategy_Controls.DataSet1()
         Me.StrategiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StrategiesTableAdapter = New Strategy_Controls.DataSet1TableAdapters.StrategiesTableAdapter()
         Me.StrategyDG = New System.Windows.Forms.DataGridView()
-        Me.DataSet11 = New Strategy_Controls.DataSet1()
-        Me.Strategies1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Strategies1TableAdapter = New Strategy_Controls.DataSet1TableAdapters.Strategies1TableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StratNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,14 +60,24 @@ Partial Class Form1
         Me.SXADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceSensitivityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NotesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Strategies1TableAdapter = New Strategy_Controls.DataSet1TableAdapters.Strategies1TableAdapter()
         Me.Mirror = New System.Windows.Forms.Button()
         Me.SaveData = New System.Windows.Forms.Button()
         Me.ErrorTB = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PosLimTB = New System.Windows.Forms.TextBox()
+        Me.MVarTB = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.MaxVARTB = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.SLossCB = New System.Windows.Forms.CheckBox()
+        Me.MaxPosTB = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        CType(Me.Strategies1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StrategiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StrategyDG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Strategies1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StratList
@@ -82,6 +91,16 @@ Partial Class Form1
         Me.StratList.Name = "StratList"
         Me.StratList.Size = New System.Drawing.Size(130, 511)
         Me.StratList.TabIndex = 0
+        '
+        'Strategies1BindingSource
+        '
+        Me.Strategies1BindingSource.DataMember = "Strategies1"
+        Me.Strategies1BindingSource.DataSource = Me.DataSet11
+        '
+        'DataSet11
+        '
+        Me.DataSet11.DataSetName = "DataSet1"
+        Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataSet1
         '
@@ -127,22 +146,8 @@ Partial Class Form1
         Me.StrategyDG.DefaultCellStyle = DataGridViewCellStyle16
         Me.StrategyDG.Location = New System.Drawing.Point(173, 55)
         Me.StrategyDG.Name = "StrategyDG"
-        Me.StrategyDG.Size = New System.Drawing.Size(1709, 511)
+        Me.StrategyDG.Size = New System.Drawing.Size(1688, 511)
         Me.StrategyDG.TabIndex = 1
-        '
-        'DataSet11
-        '
-        Me.DataSet11.DataSetName = "DataSet1"
-        Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Strategies1BindingSource
-        '
-        Me.Strategies1BindingSource.DataMember = "Strategies1"
-        Me.Strategies1BindingSource.DataSource = Me.DataSet11
-        '
-        'Strategies1TableAdapter
-        '
-        Me.Strategies1TableAdapter.ClearBeforeFill = True
         '
         'IDDataGridViewTextBoxColumn
         '
@@ -307,11 +312,15 @@ Partial Class Form1
         Me.NotesDataGridViewTextBoxColumn.Name = "NotesDataGridViewTextBoxColumn"
         Me.NotesDataGridViewTextBoxColumn.Width = 300
         '
+        'Strategies1TableAdapter
+        '
+        Me.Strategies1TableAdapter.ClearBeforeFill = True
+        '
         'Mirror
         '
         Me.Mirror.BackColor = System.Drawing.Color.SteelBlue
         Me.Mirror.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Mirror.Location = New System.Drawing.Point(173, 12)
+        Me.Mirror.Location = New System.Drawing.Point(1621, 19)
         Me.Mirror.Name = "Mirror"
         Me.Mirror.Size = New System.Drawing.Size(111, 30)
         Me.Mirror.TabIndex = 2
@@ -322,7 +331,7 @@ Partial Class Form1
         '
         Me.SaveData.BackColor = System.Drawing.Color.DarkRed
         Me.SaveData.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SaveData.Location = New System.Drawing.Point(1771, 19)
+        Me.SaveData.Location = New System.Drawing.Point(1750, 19)
         Me.SaveData.Name = "SaveData"
         Me.SaveData.Size = New System.Drawing.Size(111, 30)
         Me.SaveData.TabIndex = 3
@@ -336,15 +345,136 @@ Partial Class Form1
         Me.ErrorTB.ForeColor = System.Drawing.Color.White
         Me.ErrorTB.Location = New System.Drawing.Point(25, 581)
         Me.ErrorTB.Name = "ErrorTB"
-        Me.ErrorTB.Size = New System.Drawing.Size(1857, 20)
+        Me.ErrorTB.Size = New System.Drawing.Size(1836, 20)
         Me.ErrorTB.TabIndex = 4
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.Black
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(189, 26)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(87, 13)
+        Me.TextBox1.TabIndex = 5
+        Me.TextBox1.Text = "Max % Portfolio"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'PosLimTB
+        '
+        Me.PosLimTB.BackColor = System.Drawing.Color.Peru
+        Me.PosLimTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PosLimTB.ForeColor = System.Drawing.Color.White
+        Me.PosLimTB.Location = New System.Drawing.Point(282, 21)
+        Me.PosLimTB.Name = "PosLimTB"
+        Me.PosLimTB.Size = New System.Drawing.Size(65, 20)
+        Me.PosLimTB.TabIndex = 6
+        Me.PosLimTB.Text = "7.5"
+        Me.PosLimTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'MVarTB
+        '
+        Me.MVarTB.BackColor = System.Drawing.Color.Peru
+        Me.MVarTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MVarTB.ForeColor = System.Drawing.Color.White
+        Me.MVarTB.Location = New System.Drawing.Point(427, 21)
+        Me.MVarTB.Name = "MVarTB"
+        Me.MVarTB.Size = New System.Drawing.Size(65, 20)
+        Me.MVarTB.TabIndex = 8
+        Me.MVarTB.Text = "3"
+        Me.MVarTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BackColor = System.Drawing.Color.Black
+        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox4.ForeColor = System.Drawing.Color.White
+        Me.TextBox4.Location = New System.Drawing.Point(353, 26)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(68, 13)
+        Me.TextBox4.TabIndex = 7
+        Me.TextBox4.Text = "Max % VAR"
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'MaxVARTB
+        '
+        Me.MaxVARTB.BackColor = System.Drawing.Color.Navy
+        Me.MaxVARTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MaxVARTB.ForeColor = System.Drawing.Color.White
+        Me.MaxVARTB.Location = New System.Drawing.Point(786, 21)
+        Me.MaxVARTB.Name = "MaxVARTB"
+        Me.MaxVARTB.Size = New System.Drawing.Size(65, 20)
+        Me.MaxVARTB.TabIndex = 10
+        Me.MaxVARTB.Text = "0"
+        Me.MaxVARTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox6
+        '
+        Me.TextBox6.BackColor = System.Drawing.Color.Black
+        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox6.ForeColor = System.Drawing.Color.White
+        Me.TextBox6.Location = New System.Drawing.Point(682, 26)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(93, 13)
+        Me.TextBox6.TabIndex = 9
+        Me.TextBox6.Text = "Max Implied VAR"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'SLossCB
+        '
+        Me.SLossCB.AutoSize = True
+        Me.SLossCB.Checked = True
+        Me.SLossCB.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.SLossCB.Location = New System.Drawing.Point(526, 24)
+        Me.SLossCB.Name = "SLossCB"
+        Me.SLossCB.Size = New System.Drawing.Size(73, 17)
+        Me.SLossCB.TabIndex = 11
+        Me.SLossCB.Text = "Stop Loss"
+        Me.SLossCB.UseVisualStyleBackColor = True
+        '
+        'MaxPosTB
+        '
+        Me.MaxPosTB.BackColor = System.Drawing.Color.Navy
+        Me.MaxPosTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MaxPosTB.ForeColor = System.Drawing.Color.White
+        Me.MaxPosTB.Location = New System.Drawing.Point(981, 20)
+        Me.MaxPosTB.Name = "MaxPosTB"
+        Me.MaxPosTB.Size = New System.Drawing.Size(65, 20)
+        Me.MaxPosTB.TabIndex = 13
+        Me.MaxPosTB.Text = "0"
+        Me.MaxPosTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.Color.Black
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.ForeColor = System.Drawing.Color.White
+        Me.TextBox5.Location = New System.Drawing.Point(877, 25)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(93, 13)
+        Me.TextBox5.TabIndex = 12
+        Me.TextBox5.Text = "Max Implied Pos %"
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1894, 961)
+        Me.ClientSize = New System.Drawing.Size(1880, 612)
+        Me.Controls.Add(Me.MaxPosTB)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.SLossCB)
+        Me.Controls.Add(Me.MaxVARTB)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.MVarTB)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.PosLimTB)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ErrorTB)
         Me.Controls.Add(Me.SaveData)
         Me.Controls.Add(Me.Mirror)
@@ -353,11 +483,11 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.Color.White
         Me.Name = "Form1"
         Me.Text = "Strategy Controls V1.01"
+        CType(Me.Strategies1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StrategiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StrategyDG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Strategies1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -395,5 +525,14 @@ Partial Class Form1
     Friend WithEvents Mirror As System.Windows.Forms.Button
     Friend WithEvents SaveData As System.Windows.Forms.Button
     Friend WithEvents ErrorTB As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PosLimTB As System.Windows.Forms.TextBox
+    Friend WithEvents MVarTB As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents MaxVARTB As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents SLossCB As System.Windows.Forms.CheckBox
+    Friend WithEvents MaxPosTB As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
 
 End Class
