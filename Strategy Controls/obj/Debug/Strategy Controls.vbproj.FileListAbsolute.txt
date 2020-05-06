@@ -1,0 +1,10 @@
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\bin\Debug\Strategy Controls.exe.config
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\bin\Debug\Strategy Controls.exe
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\bin\Debug\Strategy Controls.pdb
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\bin\Debug\Strategy Controls.xml
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy_Controls.Form1.resources
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy_Controls.Resources.resources
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.vbproj.GenerateResource.Cache
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.exe
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.xml
+C:\Users\Wayne\AppData\Local\Temporary Projects\Strategy Controls\obj\Debug\Strategy Controls.pdb
