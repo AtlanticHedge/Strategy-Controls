@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("ArbitrageConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""D:\Dropbox\Dropbox (Atlantic Hedge"& _ 
+            ")\Trading\Base.accdb""")>  _
+        Public ReadOnly Property BaseConnectionString() As String
+            Get
+                Return CType(Me("BaseConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

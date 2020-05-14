@@ -29,6 +29,8 @@ Partial Public Class DataSet1
 
     Private tableStrategies1 As Strategies1DataTable
 
+    Private tableBLMData As BLMDataDataTable
+
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -64,6 +66,9 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("Strategies1")) Is Nothing) Then
                 MyBase.Tables.Add(New Strategies1DataTable(ds.Tables("Strategies1")))
             End If
+            If (Not (ds.Tables("BLMData")) Is Nothing) Then
+                MyBase.Tables.Add(New BLMDataDataTable(ds.Tables("BLMData")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -98,6 +103,16 @@ Partial Public Class DataSet1
     Public ReadOnly Property Strategies1() As Strategies1DataTable
         Get
             Return Me.tableStrategies1
+        End Get
+    End Property
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+     Global.System.ComponentModel.Browsable(False), _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)> _
+    Public ReadOnly Property BLMData() As BLMDataDataTable
+        Get
+            Return Me.tableBLMData
         End Get
     End Property
 
@@ -174,6 +189,9 @@ Partial Public Class DataSet1
             If (Not (ds.Tables("Strategies1")) Is Nothing) Then
                 MyBase.Tables.Add(New Strategies1DataTable(ds.Tables("Strategies1")))
             End If
+            If (Not (ds.Tables("BLMData")) Is Nothing) Then
+                MyBase.Tables.Add(New BLMDataDataTable(ds.Tables("BLMData")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -218,6 +236,12 @@ Partial Public Class DataSet1
                 Me.tableStrategies1.InitVars()
             End If
         End If
+        Me.tableBLMData = CType(MyBase.Tables("BLMData"), BLMDataDataTable)
+        If (initTable = True) Then
+            If (Not (Me.tableBLMData) Is Nothing) Then
+                Me.tableBLMData.InitVars()
+            End If
+        End If
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -232,6 +256,8 @@ Partial Public Class DataSet1
         MyBase.Tables.Add(Me.tableStrategies)
         Me.tableStrategies1 = New Strategies1DataTable()
         MyBase.Tables.Add(Me.tableStrategies1)
+        Me.tableBLMData = New BLMDataDataTable()
+        MyBase.Tables.Add(Me.tableBLMData)
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -243,6 +269,12 @@ Partial Public Class DataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Private Function ShouldSerializeStrategies1() As Boolean
+        Return False
+    End Function
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Private Function ShouldSerializeBLMData() As Boolean
         Return False
     End Function
 
@@ -310,6 +342,9 @@ Partial Public Class DataSet1
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Public Delegate Sub Strategies1RowChangeEventHandler(ByVal sender As Object, ByVal e As Strategies1RowChangeEvent)
 
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Delegate Sub BLMDataRowChangeEventHandler(ByVal sender As Object, ByVal e As BLMDataRowChangeEvent)
+
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
@@ -361,6 +396,76 @@ Partial Public Class DataSet1
         Private columnNotes As Global.System.Data.DataColumn
 
         Private columnActive As Global.System.Data.DataColumn
+
+        Private columnNumInstr As Global.System.Data.DataColumn
+
+        Private columnRiskAlgo As Global.System.Data.DataColumn
+
+        Private columnAutoLimitType As Global.System.Data.DataColumn
+
+        Private columnExecAlgo As Global.System.Data.DataColumn
+
+        Private columnEntryAlgo As Global.System.Data.DataColumn
+
+        Private columnExitAlgo As Global.System.Data.DataColumn
+
+        Private columnAutoExec As Global.System.Data.DataColumn
+
+        Private columnLegIn As Global.System.Data.DataColumn
+
+        Private columnTradeEntry As Global.System.Data.DataColumn
+
+        Private columnAutoLimits As Global.System.Data.DataColumn
+
+        Private columnRebalance As Global.System.Data.DataColumn
+
+        Private columnLAE As Global.System.Data.DataColumn
+
+        Private columnLAX As Global.System.Data.DataColumn
+
+        Private columnBidQ As Global.System.Data.DataColumn
+
+        Private columnBidP As Global.System.Data.DataColumn
+
+        Private columnAskP As Global.System.Data.DataColumn
+
+        Private columnAskQ As Global.System.Data.DataColumn
+
+        Private columnSAE As Global.System.Data.DataColumn
+
+        Private columnSAX As Global.System.Data.DataColumn
+
+        Private columnTargetBidP As Global.System.Data.DataColumn
+
+        Private columnTargetBidQ As Global.System.Data.DataColumn
+
+        Private columnTargetAskP As Global.System.Data.DataColumn
+
+        Private columnTargetAskQ As Global.System.Data.DataColumn
+
+        Private columnTargetProfit As Global.System.Data.DataColumn
+
+        Private columnProfit As Global.System.Data.DataColumn
+
+        Private columnProfitDiff As Global.System.Data.DataColumn
+
+        Private columnCurrPosAveLE As Global.System.Data.DataColumn
+
+        Private columnCurrPosAveSE As Global.System.Data.DataColumn
+
+        Private columnCurrExposure As Global.System.Data.DataColumn
+
+        Private columnMaxExposure As Global.System.Data.DataColumn
+
+        Private columnUpdated As Global.System.Data.DataColumn
+
+        Private columnMaxLoss As Global.System.Data.DataColumn
+
+        Private columnActiveOrders As Global.System.Data.DataColumn
+
+        Private columnRealizedProfit As Global.System.Data.DataColumn
+
+        Private columnMaxAccumExp As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -574,6 +679,286 @@ Partial Public Class DataSet1
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NumInstrColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNumInstr
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property RiskAlgoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRiskAlgo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property AutoLimitTypeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAutoLimitType
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ExecAlgoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnExecAlgo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property EntryAlgoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEntryAlgo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ExitAlgoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnExitAlgo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property AutoExecColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAutoExec
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property LegInColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLegIn
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TradeEntryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTradeEntry
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property AutoLimitsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAutoLimits
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property RebalanceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRebalance
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property LAEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLAE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property LAXColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLAX
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property BidQColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBidQ
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property BidPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBidP
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property AskPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAskP
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property AskQColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAskQ
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property SAEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSAE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property SAXColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSAX
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TargetBidPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTargetBidP
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TargetBidQColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTargetBidQ
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TargetAskPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTargetAskP
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TargetAskQColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTargetAskQ
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property TargetProfitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTargetProfit
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ProfitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProfit
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ProfitDiffColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProfitDiff
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CurrPosAveLEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCurrPosAveLE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CurrPosAveSEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCurrPosAveSE
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property CurrExposureColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCurrExposure
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MaxExposureColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMaxExposure
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property UpdatedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUpdated
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MaxLossColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMaxLoss
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property ActiveOrdersColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnActiveOrders
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property RealizedProfitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRealizedProfit
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MaxAccumExpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMaxAccumExp
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -631,9 +1016,44 @@ Partial Public Class DataSet1
                     ByVal SXA As Double, _
                     ByVal PriceSensitivity As Double, _
                     ByVal Notes As String, _
-                    ByVal Active As Boolean) As StrategiesRow
+                    ByVal Active As Boolean, _
+                    ByVal NumInstr As Integer, _
+                    ByVal RiskAlgo As String, _
+                    ByVal AutoLimitType As String, _
+                    ByVal ExecAlgo As String, _
+                    ByVal EntryAlgo As String, _
+                    ByVal ExitAlgo As String, _
+                    ByVal AutoExec As Boolean, _
+                    ByVal LegIn As Boolean, _
+                    ByVal TradeEntry As Boolean, _
+                    ByVal AutoLimits As Boolean, _
+                    ByVal Rebalance As Boolean, _
+                    ByVal LAE As Double, _
+                    ByVal LAX As Double, _
+                    ByVal BidQ As Double, _
+                    ByVal BidP As Double, _
+                    ByVal AskP As Double, _
+                    ByVal AskQ As Double, _
+                    ByVal SAE As Double, _
+                    ByVal SAX As Double, _
+                    ByVal TargetBidP As Double, _
+                    ByVal TargetBidQ As Double, _
+                    ByVal TargetAskP As Double, _
+                    ByVal TargetAskQ As Double, _
+                    ByVal TargetProfit As Double, _
+                    ByVal Profit As Double, _
+                    ByVal ProfitDiff As Double, _
+                    ByVal CurrPosAveLE As Double, _
+                    ByVal CurrPosAveSE As Double, _
+                    ByVal CurrExposure As Double, _
+                    ByVal MaxExposure As Double, _
+                    ByVal Updated As Boolean, _
+                    ByVal MaxLoss As Double, _
+                    ByVal ActiveOrders As Boolean, _
+                    ByVal RealizedProfit As Double, _
+                    ByVal MaxAccumExp As Double) As StrategiesRow
             Dim rowStrategiesRow As StrategiesRow = CType(Me.NewRow, StrategiesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, StratName, Group, PortfolioAlgo, CalcAlgo, StopLossAlgo, Spread_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, SE, SEA, SX, SXA, PriceSensitivity, Notes, Active}
+            Dim columnValuesArray() As Object = New Object() {Nothing, StratName, Group, PortfolioAlgo, CalcAlgo, StopLossAlgo, Spread_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, SE, SEA, SX, SXA, PriceSensitivity, Notes, Active, NumInstr, RiskAlgo, AutoLimitType, ExecAlgo, EntryAlgo, ExitAlgo, AutoExec, LegIn, TradeEntry, AutoLimits, Rebalance, LAE, LAX, BidQ, BidP, AskP, AskQ, SAE, SAX, TargetBidP, TargetBidQ, TargetAskP, TargetAskQ, TargetProfit, Profit, ProfitDiff, CurrPosAveLE, CurrPosAveSE, CurrExposure, MaxExposure, Updated, MaxLoss, ActiveOrders, RealizedProfit, MaxAccumExp}
             rowStrategiesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowStrategiesRow)
             Return rowStrategiesRow
@@ -684,6 +1104,41 @@ Partial Public Class DataSet1
             Me.columnPriceSensitivity = MyBase.Columns("PriceSensitivity")
             Me.columnNotes = MyBase.Columns("Notes")
             Me.columnActive = MyBase.Columns("Active")
+            Me.columnNumInstr = MyBase.Columns("NumInstr")
+            Me.columnRiskAlgo = MyBase.Columns("RiskAlgo")
+            Me.columnAutoLimitType = MyBase.Columns("AutoLimitType")
+            Me.columnExecAlgo = MyBase.Columns("ExecAlgo")
+            Me.columnEntryAlgo = MyBase.Columns("EntryAlgo")
+            Me.columnExitAlgo = MyBase.Columns("ExitAlgo")
+            Me.columnAutoExec = MyBase.Columns("AutoExec")
+            Me.columnLegIn = MyBase.Columns("LegIn")
+            Me.columnTradeEntry = MyBase.Columns("TradeEntry")
+            Me.columnAutoLimits = MyBase.Columns("AutoLimits")
+            Me.columnRebalance = MyBase.Columns("Rebalance")
+            Me.columnLAE = MyBase.Columns("LAE")
+            Me.columnLAX = MyBase.Columns("LAX")
+            Me.columnBidQ = MyBase.Columns("BidQ")
+            Me.columnBidP = MyBase.Columns("BidP")
+            Me.columnAskP = MyBase.Columns("AskP")
+            Me.columnAskQ = MyBase.Columns("AskQ")
+            Me.columnSAE = MyBase.Columns("SAE")
+            Me.columnSAX = MyBase.Columns("SAX")
+            Me.columnTargetBidP = MyBase.Columns("TargetBidP")
+            Me.columnTargetBidQ = MyBase.Columns("TargetBidQ")
+            Me.columnTargetAskP = MyBase.Columns("TargetAskP")
+            Me.columnTargetAskQ = MyBase.Columns("TargetAskQ")
+            Me.columnTargetProfit = MyBase.Columns("TargetProfit")
+            Me.columnProfit = MyBase.Columns("Profit")
+            Me.columnProfitDiff = MyBase.Columns("ProfitDiff")
+            Me.columnCurrPosAveLE = MyBase.Columns("CurrPosAveLE")
+            Me.columnCurrPosAveSE = MyBase.Columns("CurrPosAveSE")
+            Me.columnCurrExposure = MyBase.Columns("CurrExposure")
+            Me.columnMaxExposure = MyBase.Columns("MaxExposure")
+            Me.columnUpdated = MyBase.Columns("Updated")
+            Me.columnMaxLoss = MyBase.Columns("MaxLoss")
+            Me.columnActiveOrders = MyBase.Columns("ActiveOrders")
+            Me.columnRealizedProfit = MyBase.Columns("RealizedProfit")
+            Me.columnMaxAccumExp = MyBase.Columns("MaxAccumExp")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -733,6 +1188,76 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnNotes)
             Me.columnActive = New Global.System.Data.DataColumn("Active", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnActive)
+            Me.columnNumInstr = New Global.System.Data.DataColumn("NumInstr", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNumInstr)
+            Me.columnRiskAlgo = New Global.System.Data.DataColumn("RiskAlgo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRiskAlgo)
+            Me.columnAutoLimitType = New Global.System.Data.DataColumn("AutoLimitType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAutoLimitType)
+            Me.columnExecAlgo = New Global.System.Data.DataColumn("ExecAlgo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnExecAlgo)
+            Me.columnEntryAlgo = New Global.System.Data.DataColumn("EntryAlgo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEntryAlgo)
+            Me.columnExitAlgo = New Global.System.Data.DataColumn("ExitAlgo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnExitAlgo)
+            Me.columnAutoExec = New Global.System.Data.DataColumn("AutoExec", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAutoExec)
+            Me.columnLegIn = New Global.System.Data.DataColumn("LegIn", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLegIn)
+            Me.columnTradeEntry = New Global.System.Data.DataColumn("TradeEntry", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTradeEntry)
+            Me.columnAutoLimits = New Global.System.Data.DataColumn("AutoLimits", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAutoLimits)
+            Me.columnRebalance = New Global.System.Data.DataColumn("Rebalance", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRebalance)
+            Me.columnLAE = New Global.System.Data.DataColumn("LAE", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLAE)
+            Me.columnLAX = New Global.System.Data.DataColumn("LAX", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLAX)
+            Me.columnBidQ = New Global.System.Data.DataColumn("BidQ", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBidQ)
+            Me.columnBidP = New Global.System.Data.DataColumn("BidP", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBidP)
+            Me.columnAskP = New Global.System.Data.DataColumn("AskP", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAskP)
+            Me.columnAskQ = New Global.System.Data.DataColumn("AskQ", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAskQ)
+            Me.columnSAE = New Global.System.Data.DataColumn("SAE", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSAE)
+            Me.columnSAX = New Global.System.Data.DataColumn("SAX", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSAX)
+            Me.columnTargetBidP = New Global.System.Data.DataColumn("TargetBidP", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTargetBidP)
+            Me.columnTargetBidQ = New Global.System.Data.DataColumn("TargetBidQ", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTargetBidQ)
+            Me.columnTargetAskP = New Global.System.Data.DataColumn("TargetAskP", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTargetAskP)
+            Me.columnTargetAskQ = New Global.System.Data.DataColumn("TargetAskQ", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTargetAskQ)
+            Me.columnTargetProfit = New Global.System.Data.DataColumn("TargetProfit", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTargetProfit)
+            Me.columnProfit = New Global.System.Data.DataColumn("Profit", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProfit)
+            Me.columnProfitDiff = New Global.System.Data.DataColumn("ProfitDiff", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProfitDiff)
+            Me.columnCurrPosAveLE = New Global.System.Data.DataColumn("CurrPosAveLE", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCurrPosAveLE)
+            Me.columnCurrPosAveSE = New Global.System.Data.DataColumn("CurrPosAveSE", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCurrPosAveSE)
+            Me.columnCurrExposure = New Global.System.Data.DataColumn("CurrExposure", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCurrExposure)
+            Me.columnMaxExposure = New Global.System.Data.DataColumn("MaxExposure", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMaxExposure)
+            Me.columnUpdated = New Global.System.Data.DataColumn("Updated", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUpdated)
+            Me.columnMaxLoss = New Global.System.Data.DataColumn("MaxLoss", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMaxLoss)
+            Me.columnActiveOrders = New Global.System.Data.DataColumn("ActiveOrders", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnActiveOrders)
+            Me.columnRealizedProfit = New Global.System.Data.DataColumn("RealizedProfit", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRealizedProfit)
+            Me.columnMaxAccumExp = New Global.System.Data.DataColumn("MaxAccumExp", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMaxAccumExp)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, True))
             Me.columnID.AutoIncrement = True
             Me.columnID.AutoIncrementSeed = -1
@@ -748,6 +1273,11 @@ Partial Public Class DataSet1
             Me.columnSpread_or_Ratio.MaxLength = 255
             Me.columnDirection.MaxLength = 255
             Me.columnNotes.MaxLength = 255
+            Me.columnRiskAlgo.MaxLength = 255
+            Me.columnAutoLimitType.MaxLength = 255
+            Me.columnExecAlgo.MaxLength = 255
+            Me.columnEntryAlgo.MaxLength = 255
+            Me.columnExitAlgo.MaxLength = 255
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1087,6 +1617,484 @@ Partial Public Class DataSet1
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "Strategies1DataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current, Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+
+                            Do While ((s1.Position <> s1.Length) _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+
+
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close()
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close()
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(), _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")> _
+    Partial Public Class BLMDataDataTable
+        Inherits Global.System.Data.TypedTableBase(Of BLMDataRow)
+
+        Private columnStratName As Global.System.Data.DataColumn
+
+        Private columnLast As Global.System.Data.DataColumn
+
+        Private _column_1d As Global.System.Data.DataColumn
+
+        Private column30D_Vol As Global.System.Data.DataColumn
+
+        Private column200D_Vol As Global.System.Data.DataColumn
+
+        Private column30D_Hi As Global.System.Data.DataColumn
+
+        Private column52w_Hi As Global.System.Data.DataColumn
+
+        Private column30D_Lo As Global.System.Data.DataColumn
+
+        Private column52w_Lo As Global.System.Data.DataColumn
+
+        Private columnRSI_14d As Global.System.Data.DataColumn
+
+        Private columnMA_10D As Global.System.Data.DataColumn
+
+        Private columnMA_30D As Global.System.Data.DataColumn
+
+        Private columnMA_200D As Global.System.Data.DataColumn
+
+        Private columnStd_Dev As Global.System.Data.DataColumn
+
+        Private columnBol_L As Global.System.Data.DataColumn
+
+        Private columnBol_U As Global.System.Data.DataColumn
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.TableName = "BLMData"
+            Me.BeginInit()
+            Me.InitClass()
+            Me.EndInit()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New()
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars()
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property StratNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStratName
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property LastColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLast
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property __1dColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me._column_1d
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _30D_VolColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column30D_Vol
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _200D_VolColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column200D_Vol
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _30D_HiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column30D_Hi
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _52w_HiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column52w_Hi
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _30D_LoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column30D_Lo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property _52w_LoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.column52w_Lo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property RSI_14dColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRSI_14d
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MA_10DColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMA_10D
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MA_30DColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMA_30D
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MA_200DColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMA_200D
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Std_DevColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStd_Dev
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Bol_LColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBol_L
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Bol_UColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBol_U
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Browsable(False)> _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Default Public ReadOnly Property Item(ByVal index As Integer) As BLMDataRow
+            Get
+                Return CType(Me.Rows(index), BLMDataRow)
+            End Get
+        End Property
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event BLMDataRowChanging As BLMDataRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event BLMDataRowChanged As BLMDataRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event BLMDataRowDeleting As BLMDataRowChangeEventHandler
+
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Event BLMDataRowDeleted As BLMDataRowChangeEventHandler
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Sub AddBLMDataRow(ByVal row As BLMDataRow)
+            Me.Rows.Add(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overloads Function AddBLMDataRow( _
+                    ByVal StratName As String, _
+                    ByVal Last As Double, _
+                    ByVal __1d As Double, _
+                    ByVal _30D_Vol As Double, _
+                    ByVal _200D_Vol As Double, _
+                    ByVal _30D_Hi As Double, _
+                    ByVal _52w_Hi As Double, _
+                    ByVal _30D_Lo As Double, _
+                    ByVal _52w_Lo As Double, _
+                    ByVal RSI_14d As Double, _
+                    ByVal MA_10D As Double, _
+                    ByVal MA_30D As Double, _
+                    ByVal MA_200D As Double, _
+                    ByVal Std_Dev As Double, _
+                    ByVal Bol_L As Double, _
+                    ByVal Bol_U As Double) As BLMDataRow
+            Dim rowBLMDataRow As BLMDataRow = CType(Me.NewRow, BLMDataRow)
+            Dim columnValuesArray() As Object = New Object() {StratName, Last, __1d, _30D_Vol, _200D_Vol, _30D_Hi, _52w_Hi, _30D_Lo, _52w_Lo, RSI_14d, MA_10D, MA_30D, MA_200D, Std_Dev, Bol_L, Bol_U}
+            rowBLMDataRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowBLMDataRow)
+            Return rowBLMDataRow
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As BLMDataDataTable = CType(MyBase.Clone, BLMDataDataTable)
+            cln.InitVars()
+            Return cln
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New BLMDataDataTable()
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub InitVars()
+            Me.columnStratName = MyBase.Columns("StratName")
+            Me.columnLast = MyBase.Columns("Last")
+            Me._column_1d = MyBase.Columns("%1d")
+            Me.column30D_Vol = MyBase.Columns("30D Vol")
+            Me.column200D_Vol = MyBase.Columns("200D Vol")
+            Me.column30D_Hi = MyBase.Columns("30D Hi")
+            Me.column52w_Hi = MyBase.Columns("52w Hi")
+            Me.column30D_Lo = MyBase.Columns("30D Lo")
+            Me.column52w_Lo = MyBase.Columns("52w Lo")
+            Me.columnRSI_14d = MyBase.Columns("RSI 14d")
+            Me.columnMA_10D = MyBase.Columns("MA 10D")
+            Me.columnMA_30D = MyBase.Columns("MA 30D")
+            Me.columnMA_200D = MyBase.Columns("MA 200D")
+            Me.columnStd_Dev = MyBase.Columns("Std Dev")
+            Me.columnBol_L = MyBase.Columns("Bol L")
+            Me.columnBol_U = MyBase.Columns("Bol U")
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitClass()
+            Me.columnStratName = New Global.System.Data.DataColumn("StratName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStratName)
+            Me.columnLast = New Global.System.Data.DataColumn("Last", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLast)
+            Me._column_1d = New Global.System.Data.DataColumn("%1d", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me._column_1d.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_1d")
+            Me._column_1d.ExtendedProperties.Add("Generator_UserColumnName", "%1d")
+            MyBase.Columns.Add(Me._column_1d)
+            Me.column30D_Vol = New Global.System.Data.DataColumn("30D Vol", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column30D_Vol.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column30D_Vol")
+            Me.column30D_Vol.ExtendedProperties.Add("Generator_UserColumnName", "30D Vol")
+            MyBase.Columns.Add(Me.column30D_Vol)
+            Me.column200D_Vol = New Global.System.Data.DataColumn("200D Vol", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column200D_Vol.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column200D_Vol")
+            Me.column200D_Vol.ExtendedProperties.Add("Generator_UserColumnName", "200D Vol")
+            MyBase.Columns.Add(Me.column200D_Vol)
+            Me.column30D_Hi = New Global.System.Data.DataColumn("30D Hi", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column30D_Hi.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column30D_Hi")
+            Me.column30D_Hi.ExtendedProperties.Add("Generator_UserColumnName", "30D Hi")
+            MyBase.Columns.Add(Me.column30D_Hi)
+            Me.column52w_Hi = New Global.System.Data.DataColumn("52w Hi", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column52w_Hi.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column52w_Hi")
+            Me.column52w_Hi.ExtendedProperties.Add("Generator_UserColumnName", "52w Hi")
+            MyBase.Columns.Add(Me.column52w_Hi)
+            Me.column30D_Lo = New Global.System.Data.DataColumn("30D Lo", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column30D_Lo.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column30D_Lo")
+            Me.column30D_Lo.ExtendedProperties.Add("Generator_UserColumnName", "30D Lo")
+            MyBase.Columns.Add(Me.column30D_Lo)
+            Me.column52w_Lo = New Global.System.Data.DataColumn("52w Lo", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.column52w_Lo.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column52w_Lo")
+            Me.column52w_Lo.ExtendedProperties.Add("Generator_UserColumnName", "52w Lo")
+            MyBase.Columns.Add(Me.column52w_Lo)
+            Me.columnRSI_14d = New Global.System.Data.DataColumn("RSI 14d", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRSI_14d)
+            Me.columnMA_10D = New Global.System.Data.DataColumn("MA 10D", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMA_10D)
+            Me.columnMA_30D = New Global.System.Data.DataColumn("MA 30D", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMA_30D)
+            Me.columnMA_200D = New Global.System.Data.DataColumn("MA 200D", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMA_200D)
+            Me.columnStd_Dev = New Global.System.Data.DataColumn("Std Dev", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStd_Dev)
+            Me.columnBol_L = New Global.System.Data.DataColumn("Bol L", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBol_L)
+            Me.columnBol_U = New Global.System.Data.DataColumn("Bol U", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBol_U)
+            Me.columnStratName.MaxLength = 255
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function NewBLMDataRow() As BLMDataRow
+            Return CType(Me.NewRow, BLMDataRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New BLMDataRow(builder)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(BLMDataRow)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.BLMDataRowChangedEvent) Is Nothing) Then
+                RaiseEvent BLMDataRowChanged(Me, New BLMDataRowChangeEvent(CType(e.Row, BLMDataRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.BLMDataRowChangingEvent) Is Nothing) Then
+                RaiseEvent BLMDataRowChanging(Me, New BLMDataRowChangeEvent(CType(e.Row, BLMDataRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.BLMDataRowDeletedEvent) Is Nothing) Then
+                RaiseEvent BLMDataRowDeleted(Me, New BLMDataRowChangeEvent(CType(e.Row, BLMDataRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.BLMDataRowDeletingEvent) Is Nothing) Then
+                RaiseEvent BLMDataRowDeleting(Me, New BLMDataRowChangeEvent(CType(e.Row, BLMDataRow), e.Action))
+            End If
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub RemoveBLMDataRow(ByVal row As BLMDataRow)
+            Me.Rows.Remove(row)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSet1 = New DataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "BLMDataDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1473,6 +2481,531 @@ Partial Public Class DataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NumInstr() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.NumInstrColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NumInstr' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableStrategies.NumInstrColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property RiskAlgo() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.RiskAlgoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RiskAlgo' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableStrategies.RiskAlgoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property AutoLimitType() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.AutoLimitTypeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AutoLimitType' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableStrategies.AutoLimitTypeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ExecAlgo() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.ExecAlgoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ExecAlgo' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableStrategies.ExecAlgoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property EntryAlgo() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.EntryAlgoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EntryAlgo' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableStrategies.EntryAlgoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ExitAlgo() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.ExitAlgoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ExitAlgo' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableStrategies.ExitAlgoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property AutoExec() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.AutoExecColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AutoExec' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.AutoExecColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property LegIn() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.LegInColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LegIn' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.LegInColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TradeEntry() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TradeEntryColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TradeEntry' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.TradeEntryColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property AutoLimits() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.AutoLimitsColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AutoLimits' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.AutoLimitsColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Rebalance() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.RebalanceColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Rebalance' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.RebalanceColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property LAE() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.LAEColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LAE' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.LAEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property LAX() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.LAXColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LAX' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.LAXColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property BidQ() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.BidQColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BidQ' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.BidQColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property BidP() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.BidPColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BidP' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.BidPColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property AskP() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.AskPColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AskP' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.AskPColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property AskQ() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.AskQColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'AskQ' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.AskQColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property SAE() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.SAEColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SAE' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.SAEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property SAX() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.SAXColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SAX' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.SAXColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TargetBidP() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TargetBidPColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TargetBidP' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.TargetBidPColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TargetBidQ() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TargetBidQColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TargetBidQ' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.TargetBidQColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TargetAskP() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TargetAskPColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TargetAskP' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.TargetAskPColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TargetAskQ() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TargetAskQColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TargetAskQ' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.TargetAskQColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property TargetProfit() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.TargetProfitColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TargetProfit' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.TargetProfitColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Profit() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.ProfitColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Profit' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.ProfitColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ProfitDiff() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.ProfitDiffColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ProfitDiff' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.ProfitDiffColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CurrPosAveLE() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.CurrPosAveLEColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CurrPosAveLE' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.CurrPosAveLEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CurrPosAveSE() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.CurrPosAveSEColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CurrPosAveSE' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.CurrPosAveSEColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property CurrExposure() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.CurrExposureColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CurrExposure' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.CurrExposureColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MaxExposure() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.MaxExposureColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MaxExposure' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.MaxExposureColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Updated() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.UpdatedColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Updated' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.UpdatedColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MaxLoss() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.MaxLossColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MaxLoss' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.MaxLossColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ActiveOrders() As Boolean
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.ActiveOrdersColumn), Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ActiveOrders' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Boolean)
+                Me(Me.tableStrategies.ActiveOrdersColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property RealizedProfit() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.RealizedProfitColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RealizedProfit' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.RealizedProfitColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MaxAccumExp() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableStrategies.MaxAccumExpColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MaxAccumExp' in table 'Strategies' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableStrategies.MaxAccumExpColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsStratNameNull() As Boolean
             Return Me.IsNull(Me.tableStrategies.StratNameColumn)
         End Function
@@ -1722,6 +3255,426 @@ Partial Public Class DataSet1
         Public Sub SetActiveNull()
             Me(Me.tableStrategies.ActiveColumn) = Global.System.Convert.DBNull
         End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNumInstrNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.NumInstrColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNumInstrNull()
+            Me(Me.tableStrategies.NumInstrColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsRiskAlgoNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.RiskAlgoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetRiskAlgoNull()
+            Me(Me.tableStrategies.RiskAlgoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAutoLimitTypeNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.AutoLimitTypeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAutoLimitTypeNull()
+            Me(Me.tableStrategies.AutoLimitTypeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsExecAlgoNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.ExecAlgoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetExecAlgoNull()
+            Me(Me.tableStrategies.ExecAlgoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsEntryAlgoNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.EntryAlgoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetEntryAlgoNull()
+            Me(Me.tableStrategies.EntryAlgoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsExitAlgoNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.ExitAlgoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetExitAlgoNull()
+            Me(Me.tableStrategies.ExitAlgoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAutoExecNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.AutoExecColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAutoExecNull()
+            Me(Me.tableStrategies.AutoExecColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsLegInNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.LegInColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetLegInNull()
+            Me(Me.tableStrategies.LegInColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTradeEntryNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TradeEntryColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTradeEntryNull()
+            Me(Me.tableStrategies.TradeEntryColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAutoLimitsNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.AutoLimitsColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAutoLimitsNull()
+            Me(Me.tableStrategies.AutoLimitsColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsRebalanceNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.RebalanceColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetRebalanceNull()
+            Me(Me.tableStrategies.RebalanceColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsLAENull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.LAEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetLAENull()
+            Me(Me.tableStrategies.LAEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsLAXNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.LAXColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetLAXNull()
+            Me(Me.tableStrategies.LAXColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBidQNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.BidQColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBidQNull()
+            Me(Me.tableStrategies.BidQColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBidPNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.BidPColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBidPNull()
+            Me(Me.tableStrategies.BidPColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAskPNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.AskPColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAskPNull()
+            Me(Me.tableStrategies.AskPColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsAskQNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.AskQColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetAskQNull()
+            Me(Me.tableStrategies.AskQColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsSAENull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.SAEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetSAENull()
+            Me(Me.tableStrategies.SAEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsSAXNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.SAXColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetSAXNull()
+            Me(Me.tableStrategies.SAXColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTargetBidPNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TargetBidPColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTargetBidPNull()
+            Me(Me.tableStrategies.TargetBidPColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTargetBidQNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TargetBidQColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTargetBidQNull()
+            Me(Me.tableStrategies.TargetBidQColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTargetAskPNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TargetAskPColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTargetAskPNull()
+            Me(Me.tableStrategies.TargetAskPColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTargetAskQNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TargetAskQColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTargetAskQNull()
+            Me(Me.tableStrategies.TargetAskQColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsTargetProfitNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.TargetProfitColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetTargetProfitNull()
+            Me(Me.tableStrategies.TargetProfitColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsProfitNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.ProfitColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetProfitNull()
+            Me(Me.tableStrategies.ProfitColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsProfitDiffNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.ProfitDiffColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetProfitDiffNull()
+            Me(Me.tableStrategies.ProfitDiffColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCurrPosAveLENull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.CurrPosAveLEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCurrPosAveLENull()
+            Me(Me.tableStrategies.CurrPosAveLEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCurrPosAveSENull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.CurrPosAveSEColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCurrPosAveSENull()
+            Me(Me.tableStrategies.CurrPosAveSEColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCurrExposureNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.CurrExposureColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCurrExposureNull()
+            Me(Me.tableStrategies.CurrExposureColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMaxExposureNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.MaxExposureColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMaxExposureNull()
+            Me(Me.tableStrategies.MaxExposureColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsUpdatedNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.UpdatedColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetUpdatedNull()
+            Me(Me.tableStrategies.UpdatedColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMaxLossNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.MaxLossColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMaxLossNull()
+            Me(Me.tableStrategies.MaxLossColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsActiveOrdersNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.ActiveOrdersColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetActiveOrdersNull()
+            Me(Me.tableStrategies.ActiveOrdersColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsRealizedProfitNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.RealizedProfitColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetRealizedProfitNull()
+            Me(Me.tableStrategies.RealizedProfitColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMaxAccumExpNull() As Boolean
+            Return Me.IsNull(Me.tableStrategies.MaxAccumExpColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMaxAccumExpNull()
+            Me(Me.tableStrategies.MaxAccumExpColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
 
     '''<summary>
@@ -1764,6 +3717,454 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetStratNameNull()
             Me(Me.tableStrategies1.StratNameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class BLMDataRow
+        Inherits Global.System.Data.DataRow
+
+        Private tableBLMData As BLMDataDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableBLMData = CType(Me.Table, BLMDataDataTable)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property StratName() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.StratNameColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'StratName' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableBLMData.StratNameColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Last() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.LastColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Last' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.LastColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property __1d() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.__1dColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '%1d' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.__1dColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _30D_Vol() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._30D_VolColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '30D Vol' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._30D_VolColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _200D_Vol() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._200D_VolColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '200D Vol' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._200D_VolColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _30D_Hi() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._30D_HiColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '30D Hi' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._30D_HiColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _52w_Hi() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._52w_HiColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '52w Hi' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._52w_HiColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _30D_Lo() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._30D_LoColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '30D Lo' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._30D_LoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property _52w_Lo() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData._52w_LoColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column '52w Lo' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData._52w_LoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property RSI_14d() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.RSI_14dColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RSI 14d' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.RSI_14dColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MA_10D() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.MA_10DColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MA 10D' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.MA_10DColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MA_30D() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.MA_30DColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MA 30D' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.MA_30DColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MA_200D() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.MA_200DColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MA 200D' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.MA_200DColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Std_Dev() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.Std_DevColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Std Dev' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.Std_DevColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Bol_L() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.Bol_LColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Bol L' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.Bol_LColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Bol_U() As Double
+            Get
+                Try
+                    Return CType(Me(Me.tableBLMData.Bol_UColumn), Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Bol U' in table 'BLMData' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Double)
+                Me(Me.tableBLMData.Bol_UColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsStratNameNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.StratNameColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetStratNameNull()
+            Me(Me.tableBLMData.StratNameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsLastNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.LastColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetLastNull()
+            Me(Me.tableBLMData.LastColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is__1dNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.__1dColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set__1dNull()
+            Me(Me.tableBLMData.__1dColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_30D_VolNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._30D_VolColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_30D_VolNull()
+            Me(Me.tableBLMData._30D_VolColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_200D_VolNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._200D_VolColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_200D_VolNull()
+            Me(Me.tableBLMData._200D_VolColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_30D_HiNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._30D_HiColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_30D_HiNull()
+            Me(Me.tableBLMData._30D_HiColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_52w_HiNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._52w_HiColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_52w_HiNull()
+            Me(Me.tableBLMData._52w_HiColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_30D_LoNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._30D_LoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_30D_LoNull()
+            Me(Me.tableBLMData._30D_LoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Is_52w_LoNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData._52w_LoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Set_52w_LoNull()
+            Me(Me.tableBLMData._52w_LoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsRSI_14dNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.RSI_14dColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetRSI_14dNull()
+            Me(Me.tableBLMData.RSI_14dColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMA_10DNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.MA_10DColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMA_10DNull()
+            Me(Me.tableBLMData.MA_10DColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMA_30DNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.MA_30DColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMA_30DNull()
+            Me(Me.tableBLMData.MA_30DColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMA_200DNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.MA_200DColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMA_200DNull()
+            Me(Me.tableBLMData.MA_200DColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsStd_DevNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.Std_DevColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetStd_DevNull()
+            Me(Me.tableBLMData.Std_DevColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBol_LNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.Bol_LColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBol_LNull()
+            Me(Me.tableBLMData.Bol_LColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBol_UNull() As Boolean
+            Return Me.IsNull(Me.tableBLMData.Bol_UColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBol_UNull()
+            Me(Me.tableBLMData.Bol_UColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -1825,6 +4226,42 @@ Partial Public Class DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public ReadOnly Property Row() As Strategies1Row
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+    Public Class BLMDataRowChangeEvent
+        Inherits Global.System.EventArgs
+
+        Private eventRow As BLMDataRow
+
+        Private eventAction As Global.System.Data.DataRowAction
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New(ByVal row As BLMDataRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New()
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Row() As BLMDataRow
             Get
                 Return Me.eventRow
             End Get
@@ -1991,6 +4428,41 @@ Namespace DataSet1TableAdapters
             tableMapping.ColumnMappings.Add("PriceSensitivity", "PriceSensitivity")
             tableMapping.ColumnMappings.Add("Notes", "Notes")
             tableMapping.ColumnMappings.Add("Active", "Active")
+            tableMapping.ColumnMappings.Add("NumInstr", "NumInstr")
+            tableMapping.ColumnMappings.Add("RiskAlgo", "RiskAlgo")
+            tableMapping.ColumnMappings.Add("AutoLimitType", "AutoLimitType")
+            tableMapping.ColumnMappings.Add("ExecAlgo", "ExecAlgo")
+            tableMapping.ColumnMappings.Add("EntryAlgo", "EntryAlgo")
+            tableMapping.ColumnMappings.Add("ExitAlgo", "ExitAlgo")
+            tableMapping.ColumnMappings.Add("AutoExec", "AutoExec")
+            tableMapping.ColumnMappings.Add("LegIn", "LegIn")
+            tableMapping.ColumnMappings.Add("TradeEntry", "TradeEntry")
+            tableMapping.ColumnMappings.Add("AutoLimits", "AutoLimits")
+            tableMapping.ColumnMappings.Add("Rebalance", "Rebalance")
+            tableMapping.ColumnMappings.Add("LAE", "LAE")
+            tableMapping.ColumnMappings.Add("LAX", "LAX")
+            tableMapping.ColumnMappings.Add("BidQ", "BidQ")
+            tableMapping.ColumnMappings.Add("BidP", "BidP")
+            tableMapping.ColumnMappings.Add("AskP", "AskP")
+            tableMapping.ColumnMappings.Add("AskQ", "AskQ")
+            tableMapping.ColumnMappings.Add("SAE", "SAE")
+            tableMapping.ColumnMappings.Add("SAX", "SAX")
+            tableMapping.ColumnMappings.Add("TargetBidP", "TargetBidP")
+            tableMapping.ColumnMappings.Add("TargetBidQ", "TargetBidQ")
+            tableMapping.ColumnMappings.Add("TargetAskP", "TargetAskP")
+            tableMapping.ColumnMappings.Add("TargetAskQ", "TargetAskQ")
+            tableMapping.ColumnMappings.Add("TargetProfit", "TargetProfit")
+            tableMapping.ColumnMappings.Add("Profit", "Profit")
+            tableMapping.ColumnMappings.Add("ProfitDiff", "ProfitDiff")
+            tableMapping.ColumnMappings.Add("CurrPosAveLE", "CurrPosAveLE")
+            tableMapping.ColumnMappings.Add("CurrPosAveSE", "CurrPosAveSE")
+            tableMapping.ColumnMappings.Add("CurrExposure", "CurrExposure")
+            tableMapping.ColumnMappings.Add("MaxExposure", "MaxExposure")
+            tableMapping.ColumnMappings.Add("Updated", "Updated")
+            tableMapping.ColumnMappings.Add("MaxLoss", "MaxLoss")
+            tableMapping.ColumnMappings.Add("ActiveOrders", "ActiveOrders")
+            tableMapping.ColumnMappings.Add("RealizedProfit", "RealizedProfit")
+            tableMapping.ColumnMappings.Add("MaxAccumExp", "MaxAccumExp")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2017,7 +4489,46 @@ Namespace DataSet1TableAdapters
                 "1 AND [PriceSensitivity] IS NULL) OR ([PriceSensitivity] = @Original_PriceSensit" & _
                 "ivity)) AND ((@IsNull_Notes = 1 AND [Notes] IS NULL) OR ([Notes] = @Original_Not" & _
                 "es)) AND ((@IsNull_Active = 1 AND [Active] IS NULL) OR ([Active] = @Original_Act" & _
-                "ive)))"
+                "ive)) AND ((@IsNull_NumInstr = 1 AND [NumInstr] IS NULL) OR ([NumInstr] = @Origi" & _
+                "nal_NumInstr)) AND ((@IsNull_RiskAlgo = 1 AND [RiskAlgo] IS NULL) OR ([RiskAlgo]" & _
+                " = @Original_RiskAlgo)) AND ((@IsNull_AutoLimitType = 1 AND [AutoLimitType] IS N" & _
+                "ULL) OR ([AutoLimitType] = @Original_AutoLimitType)) AND ((@IsNull_ExecAlgo = 1 " & _
+                "AND [ExecAlgo] IS NULL) OR ([ExecAlgo] = @Original_ExecAlgo)) AND ((@IsNull_Entr" & _
+                "yAlgo = 1 AND [EntryAlgo] IS NULL) OR ([EntryAlgo] = @Original_EntryAlgo)) AND (" & _
+                "(@IsNull_ExitAlgo = 1 AND [ExitAlgo] IS NULL) OR ([ExitAlgo] = @Original_ExitAlg" & _
+                "o)) AND ((@IsNull_AutoExec = 1 AND [AutoExec] IS NULL) OR ([AutoExec] = @Origina" & _
+                "l_AutoExec)) AND ((@IsNull_LegIn = 1 AND [LegIn] IS NULL) OR ([LegIn] = @Origina" & _
+                "l_LegIn)) AND ((@IsNull_TradeEntry = 1 AND [TradeEntry] IS NULL) OR ([TradeEntry" & _
+                "] = @Original_TradeEntry)) AND ((@IsNull_AutoLimits = 1 AND [AutoLimits] IS NULL" & _
+                ") OR ([AutoLimits] = @Original_AutoLimits)) AND ((@IsNull_Rebalance = 1 AND [Reb" & _
+                "alance] IS NULL) OR ([Rebalance] = @Original_Rebalance)) AND ((@IsNull_LAE = 1 A" & _
+                "ND [LAE] IS NULL) OR ([LAE] = @Original_LAE)) AND ((@IsNull_LAX = 1 AND [LAX] IS" & _
+                " NULL) OR ([LAX] = @Original_LAX)) AND ((@IsNull_BidQ = 1 AND [BidQ] IS NULL) OR" & _
+                " ([BidQ] = @Original_BidQ)) AND ((@IsNull_BidP = 1 AND [BidP] IS NULL) OR ([BidP" & _
+                "] = @Original_BidP)) AND ((@IsNull_AskP = 1 AND [AskP] IS NULL) OR ([AskP] = @Or" & _
+                "iginal_AskP)) AND ((@IsNull_AskQ = 1 AND [AskQ] IS NULL) OR ([AskQ] = @Original_" & _
+                "AskQ)) AND ((@IsNull_SAE = 1 AND [SAE] IS NULL) OR ([SAE] = @Original_SAE)) AND " & _
+                "((@IsNull_SAX = 1 AND [SAX] IS NULL) OR ([SAX] = @Original_SAX)) AND ((@IsNull_T" & _
+                "argetBidP = 1 AND [TargetBidP] IS NULL) OR ([TargetBidP] = @Original_TargetBidP)" & _
+                ") AND ((@IsNull_TargetBidQ = 1 AND [TargetBidQ] IS NULL) OR ([TargetBidQ] = @Ori" & _
+                "ginal_TargetBidQ)) AND ((@IsNull_TargetAskP = 1 AND [TargetAskP] IS NULL) OR ([T" & _
+                "argetAskP] = @Original_TargetAskP)) AND ((@IsNull_TargetAskQ = 1 AND [TargetAskQ" & _
+                "] IS NULL) OR ([TargetAskQ] = @Original_TargetAskQ)) AND ((@IsNull_TargetProfit " & _
+                "= 1 AND [TargetProfit] IS NULL) OR ([TargetProfit] = @Original_TargetProfit)) AN" & _
+                "D ((@IsNull_Profit = 1 AND [Profit] IS NULL) OR ([Profit] = @Original_Profit)) A" & _
+                "ND ((@IsNull_ProfitDiff = 1 AND [ProfitDiff] IS NULL) OR ([ProfitDiff] = @Origin" & _
+                "al_ProfitDiff)) AND ((@IsNull_CurrPosAveLE = 1 AND [CurrPosAveLE] IS NULL) OR ([" & _
+                "CurrPosAveLE] = @Original_CurrPosAveLE)) AND ((@IsNull_CurrPosAveSE = 1 AND [Cur" & _
+                "rPosAveSE] IS NULL) OR ([CurrPosAveSE] = @Original_CurrPosAveSE)) AND ((@IsNull_" & _
+                "CurrExposure = 1 AND [CurrExposure] IS NULL) OR ([CurrExposure] = @Original_Curr" & _
+                "Exposure)) AND ((@IsNull_MaxExposure = 1 AND [MaxExposure] IS NULL) OR ([MaxExpo" & _
+                "sure] = @Original_MaxExposure)) AND ((@IsNull_Updated = 1 AND [Updated] IS NULL)" & _
+                " OR ([Updated] = @Original_Updated)) AND ((@IsNull_MaxLoss = 1 AND [MaxLoss] IS " & _
+                "NULL) OR ([MaxLoss] = @Original_MaxLoss)) AND ((@IsNull_ActiveOrders = 1 AND [Ac" & _
+                "tiveOrders] IS NULL) OR ([ActiveOrders] = @Original_ActiveOrders)) AND ((@IsNull" & _
+                "_RealizedProfit = 1 AND [RealizedProfit] IS NULL) OR ([RealizedProfit] = @Origin" & _
+                "al_RealizedProfit)) AND ((@IsNull_MaxAccumExp = 1 AND [MaxAccumExp] IS NULL) OR " & _
+                "([MaxAccumExp] = @Original_MaxAccumExp)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StratName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StratName", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
@@ -2062,6 +4573,76 @@ Namespace DataSet1TableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Notes", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Notes", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Active", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Active", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Active", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Active", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NumInstr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NumInstr", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NumInstr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NumInstr", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RiskAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RiskAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RiskAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RiskAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoLimitType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimitType", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoLimitType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimitType", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ExecAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExecAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ExecAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExecAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_EntryAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EntryAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EntryAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EntryAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ExitAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExitAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ExitAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExitAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoExec", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoExec", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoExec", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoExec", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LegIn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LegIn", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LegIn", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LegIn", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TradeEntry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TradeEntry", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TradeEntry", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TradeEntry", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoLimits", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimits", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoLimits", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimits", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Rebalance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Rebalance", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Rebalance", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Rebalance", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LAE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LAX", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAX", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAX", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BidQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BidP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AskP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AskQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SAE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SAX", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAX", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAX", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetBidP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetBidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetBidQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetBidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetAskP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetAskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetAskQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetAskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetProfit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetProfit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetProfit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Profit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Profit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Profit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Profit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProfitDiff", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProfitDiff", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProfitDiff", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProfitDiff", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrPosAveLE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveLE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrPosAveLE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveLE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrPosAveSE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveSE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrPosAveSE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveSE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrExposure", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrExposure", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrExposure", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxExposure", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxExposure", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxExposure", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Updated", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Updated", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Updated", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Updated", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxLoss", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxLoss", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxLoss", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxLoss", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ActiveOrders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ActiveOrders", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ActiveOrders", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ActiveOrders", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RealizedProfit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RealizedProfit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RealizedProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RealizedProfit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxAccumExp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxAccumExp", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxAccumExp", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxAccumExp", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [Strategies] SET [StratName] = @StratName, [Group] = @Group, [PortfolioAlg" & _
@@ -2070,33 +4651,87 @@ Namespace DataSet1TableAdapters
                 "ordHist, [PriceScale] = @PriceScale, [SpreadScale] = @SpreadScale, [LE] = @LE, [" & _
                 "LEA] = @LEA, [LX] = @LX, [LXA] = @LXA, [SE] = @SE, [SEA] = @SEA, [SX] = @SX, [SX" & _
                 "A] = @SXA, [PriceSensitivity] = @PriceSensitivity, [Notes] = @Notes, [Active] = " & _
-                "@Active WHERE (([ID] = @Original_ID) AND ((@IsNull_StratName = 1 AND [StratName]" & _
-                " IS NULL) OR ([StratName] = @Original_StratName)) AND ((@IsNull_Group = 1 AND [G" & _
-                "roup] IS NULL) OR ([Group] = @Original_Group)) AND ((@IsNull_PortfolioAlgo = 1 A" & _
-                "ND [PortfolioAlgo] IS NULL) OR ([PortfolioAlgo] = @Original_PortfolioAlgo)) AND " & _
-                "((@IsNull_CalcAlgo = 1 AND [CalcAlgo] IS NULL) OR ([CalcAlgo] = @Original_CalcAl" & _
-                "go)) AND ((@IsNull_StopLossAlgo = 1 AND [StopLossAlgo] IS NULL) OR ([StopLossAlg" & _
-                "o] = @Original_StopLossAlgo)) AND ((@IsNull_Spread_or_Ratio = 1 AND [Spread_or_R" & _
-                "atio] IS NULL) OR ([Spread_or_Ratio] = @Original_Spread_or_Ratio)) AND ((@IsNull" & _
-                "_Direction = 1 AND [Direction] IS NULL) OR ([Direction] = @Original_Direction)) " & _
-                "AND ((@IsNull_RecordHist = 1 AND [RecordHist] IS NULL) OR ([RecordHist] = @Origi" & _
-                "nal_RecordHist)) AND ((@IsNull_PriceScale = 1 AND [PriceScale] IS NULL) OR ([Pri" & _
-                "ceScale] = @Original_PriceScale)) AND ((@IsNull_SpreadScale = 1 AND [SpreadScale" & _
-                "] IS NULL) OR ([SpreadScale] = @Original_SpreadScale)) AND ((@IsNull_LE = 1 AND " & _
-                "[LE] IS NULL) OR ([LE] = @Original_LE)) AND ((@IsNull_LEA = 1 AND [LEA] IS NULL)" & _
-                " OR ([LEA] = @Original_LEA)) AND ((@IsNull_LX = 1 AND [LX] IS NULL) OR ([LX] = @" & _
-                "Original_LX)) AND ((@IsNull_LXA = 1 AND [LXA] IS NULL) OR ([LXA] = @Original_LXA" & _
-                ")) AND ((@IsNull_SE = 1 AND [SE] IS NULL) OR ([SE] = @Original_SE)) AND ((@IsNul" & _
-                "l_SEA = 1 AND [SEA] IS NULL) OR ([SEA] = @Original_SEA)) AND ((@IsNull_SX = 1 AN" & _
-                "D [SX] IS NULL) OR ([SX] = @Original_SX)) AND ((@IsNull_SXA = 1 AND [SXA] IS NUL" & _
-                "L) OR ([SXA] = @Original_SXA)) AND ((@IsNull_PriceSensitivity = 1 AND [PriceSens" & _
-                "itivity] IS NULL) OR ([PriceSensitivity] = @Original_PriceSensitivity)) AND ((@I" & _
-                "sNull_Notes = 1 AND [Notes] IS NULL) OR ([Notes] = @Original_Notes)) AND ((@IsNu" & _
-                "ll_Active = 1 AND [Active] IS NULL) OR ([Active] = @Original_Active)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT " & _
-                "ID, StratName, [Group], PortfolioAlgo, CalcAlgo, StopLossAlgo, Spread_or_Ratio, " & _
-                "Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, SE, SEA, SX, S" & _
-                "XA, PriceSensitivity, Notes, Active FROM Strategies WHERE (ID = @ID) ORDER BY St" & _
-                "ratName, [Group]"
+                "@Active, [NumInstr] = @NumInstr, [RiskAlgo] = @RiskAlgo, [AutoLimitType] = @Auto" & _
+                "LimitType, [ExecAlgo] = @ExecAlgo, [EntryAlgo] = @EntryAlgo, [ExitAlgo] = @ExitA" & _
+                "lgo, [AutoExec] = @AutoExec, [LegIn] = @LegIn, [TradeEntry] = @TradeEntry, [Auto" & _
+                "Limits] = @AutoLimits, [Rebalance] = @Rebalance, [LAE] = @LAE, [LAX] = @LAX, [Bi" & _
+                "dQ] = @BidQ, [BidP] = @BidP, [AskP] = @AskP, [AskQ] = @AskQ, [SAE] = @SAE, [SAX]" & _
+                " = @SAX, [TargetBidP] = @TargetBidP, [TargetBidQ] = @TargetBidQ, [TargetAskP] = " & _
+                "@TargetAskP, [TargetAskQ] = @TargetAskQ, [TargetProfit] = @TargetProfit, [Profit" & _
+                "] = @Profit, [ProfitDiff] = @ProfitDiff, [CurrPosAveLE] = @CurrPosAveLE, [CurrPo" & _
+                "sAveSE] = @CurrPosAveSE, [CurrExposure] = @CurrExposure, [MaxExposure] = @MaxExp" & _
+                "osure, [Updated] = @Updated, [MaxLoss] = @MaxLoss, [ActiveOrders] = @ActiveOrder" & _
+                "s, [RealizedProfit] = @RealizedProfit, [MaxAccumExp] = @MaxAccumExp WHERE (([ID]" & _
+                " = @Original_ID) AND ((@IsNull_StratName = 1 AND [StratName] IS NULL) OR ([Strat" & _
+                "Name] = @Original_StratName)) AND ((@IsNull_Group = 1 AND [Group] IS NULL) OR ([" & _
+                "Group] = @Original_Group)) AND ((@IsNull_PortfolioAlgo = 1 AND [PortfolioAlgo] I" & _
+                "S NULL) OR ([PortfolioAlgo] = @Original_PortfolioAlgo)) AND ((@IsNull_CalcAlgo =" & _
+                " 1 AND [CalcAlgo] IS NULL) OR ([CalcAlgo] = @Original_CalcAlgo)) AND ((@IsNull_S" & _
+                "topLossAlgo = 1 AND [StopLossAlgo] IS NULL) OR ([StopLossAlgo] = @Original_StopL" & _
+                "ossAlgo)) AND ((@IsNull_Spread_or_Ratio = 1 AND [Spread_or_Ratio] IS NULL) OR ([" & _
+                "Spread_or_Ratio] = @Original_Spread_or_Ratio)) AND ((@IsNull_Direction = 1 AND [" & _
+                "Direction] IS NULL) OR ([Direction] = @Original_Direction)) AND ((@IsNull_Record" & _
+                "Hist = 1 AND [RecordHist] IS NULL) OR ([RecordHist] = @Original_RecordHist)) AND" & _
+                " ((@IsNull_PriceScale = 1 AND [PriceScale] IS NULL) OR ([PriceScale] = @Original" & _
+                "_PriceScale)) AND ((@IsNull_SpreadScale = 1 AND [SpreadScale] IS NULL) OR ([Spre" & _
+                "adScale] = @Original_SpreadScale)) AND ((@IsNull_LE = 1 AND [LE] IS NULL) OR ([L" & _
+                "E] = @Original_LE)) AND ((@IsNull_LEA = 1 AND [LEA] IS NULL) OR ([LEA] = @Origin" & _
+                "al_LEA)) AND ((@IsNull_LX = 1 AND [LX] IS NULL) OR ([LX] = @Original_LX)) AND ((" & _
+                "@IsNull_LXA = 1 AND [LXA] IS NULL) OR ([LXA] = @Original_LXA)) AND ((@IsNull_SE " & _
+                "= 1 AND [SE] IS NULL) OR ([SE] = @Original_SE)) AND ((@IsNull_SEA = 1 AND [SEA] " & _
+                "IS NULL) OR ([SEA] = @Original_SEA)) AND ((@IsNull_SX = 1 AND [SX] IS NULL) OR (" & _
+                "[SX] = @Original_SX)) AND ((@IsNull_SXA = 1 AND [SXA] IS NULL) OR ([SXA] = @Orig" & _
+                "inal_SXA)) AND ((@IsNull_PriceSensitivity = 1 AND [PriceSensitivity] IS NULL) OR" & _
+                " ([PriceSensitivity] = @Original_PriceSensitivity)) AND ((@IsNull_Notes = 1 AND " & _
+                "[Notes] IS NULL) OR ([Notes] = @Original_Notes)) AND ((@IsNull_Active = 1 AND [A" & _
+                "ctive] IS NULL) OR ([Active] = @Original_Active)) AND ((@IsNull_NumInstr = 1 AND" & _
+                " [NumInstr] IS NULL) OR ([NumInstr] = @Original_NumInstr)) AND ((@IsNull_RiskAlg" & _
+                "o = 1 AND [RiskAlgo] IS NULL) OR ([RiskAlgo] = @Original_RiskAlgo)) AND ((@IsNul" & _
+                "l_AutoLimitType = 1 AND [AutoLimitType] IS NULL) OR ([AutoLimitType] = @Original" & _
+                "_AutoLimitType)) AND ((@IsNull_ExecAlgo = 1 AND [ExecAlgo] IS NULL) OR ([ExecAlg" & _
+                "o] = @Original_ExecAlgo)) AND ((@IsNull_EntryAlgo = 1 AND [EntryAlgo] IS NULL) O" & _
+                "R ([EntryAlgo] = @Original_EntryAlgo)) AND ((@IsNull_ExitAlgo = 1 AND [ExitAlgo]" & _
+                " IS NULL) OR ([ExitAlgo] = @Original_ExitAlgo)) AND ((@IsNull_AutoExec = 1 AND [" & _
+                "AutoExec] IS NULL) OR ([AutoExec] = @Original_AutoExec)) AND ((@IsNull_LegIn = 1" & _
+                " AND [LegIn] IS NULL) OR ([LegIn] = @Original_LegIn)) AND ((@IsNull_TradeEntry =" & _
+                " 1 AND [TradeEntry] IS NULL) OR ([TradeEntry] = @Original_TradeEntry)) AND ((@Is" & _
+                "Null_AutoLimits = 1 AND [AutoLimits] IS NULL) OR ([AutoLimits] = @Original_AutoL" & _
+                "imits)) AND ((@IsNull_Rebalance = 1 AND [Rebalance] IS NULL) OR ([Rebalance] = @" & _
+                "Original_Rebalance)) AND ((@IsNull_LAE = 1 AND [LAE] IS NULL) OR ([LAE] = @Origi" & _
+                "nal_LAE)) AND ((@IsNull_LAX = 1 AND [LAX] IS NULL) OR ([LAX] = @Original_LAX)) A" & _
+                "ND ((@IsNull_BidQ = 1 AND [BidQ] IS NULL) OR ([BidQ] = @Original_BidQ)) AND ((@I" & _
+                "sNull_BidP = 1 AND [BidP] IS NULL) OR ([BidP] = @Original_BidP)) AND ((@IsNull_A" & _
+                "skP = 1 AND [AskP] IS NULL) OR ([AskP] = @Original_AskP)) AND ((@IsNull_AskQ = 1" & _
+                " AND [AskQ] IS NULL) OR ([AskQ] = @Original_AskQ)) AND ((@IsNull_SAE = 1 AND [SA" & _
+                "E] IS NULL) OR ([SAE] = @Original_SAE)) AND ((@IsNull_SAX = 1 AND [SAX] IS NULL)" & _
+                " OR ([SAX] = @Original_SAX)) AND ((@IsNull_TargetBidP = 1 AND [TargetBidP] IS NU" & _
+                "LL) OR ([TargetBidP] = @Original_TargetBidP)) AND ((@IsNull_TargetBidQ = 1 AND [" & _
+                "TargetBidQ] IS NULL) OR ([TargetBidQ] = @Original_TargetBidQ)) AND ((@IsNull_Tar" & _
+                "getAskP = 1 AND [TargetAskP] IS NULL) OR ([TargetAskP] = @Original_TargetAskP)) " & _
+                "AND ((@IsNull_TargetAskQ = 1 AND [TargetAskQ] IS NULL) OR ([TargetAskQ] = @Origi" & _
+                "nal_TargetAskQ)) AND ((@IsNull_TargetProfit = 1 AND [TargetProfit] IS NULL) OR (" & _
+                "[TargetProfit] = @Original_TargetProfit)) AND ((@IsNull_Profit = 1 AND [Profit] " & _
+                "IS NULL) OR ([Profit] = @Original_Profit)) AND ((@IsNull_ProfitDiff = 1 AND [Pro" & _
+                "fitDiff] IS NULL) OR ([ProfitDiff] = @Original_ProfitDiff)) AND ((@IsNull_CurrPo" & _
+                "sAveLE = 1 AND [CurrPosAveLE] IS NULL) OR ([CurrPosAveLE] = @Original_CurrPosAve" & _
+                "LE)) AND ((@IsNull_CurrPosAveSE = 1 AND [CurrPosAveSE] IS NULL) OR ([CurrPosAveS" & _
+                "E] = @Original_CurrPosAveSE)) AND ((@IsNull_CurrExposure = 1 AND [CurrExposure] " & _
+                "IS NULL) OR ([CurrExposure] = @Original_CurrExposure)) AND ((@IsNull_MaxExposure" & _
+                " = 1 AND [MaxExposure] IS NULL) OR ([MaxExposure] = @Original_MaxExposure)) AND " & _
+                "((@IsNull_Updated = 1 AND [Updated] IS NULL) OR ([Updated] = @Original_Updated))" & _
+                " AND ((@IsNull_MaxLoss = 1 AND [MaxLoss] IS NULL) OR ([MaxLoss] = @Original_MaxL" & _
+                "oss)) AND ((@IsNull_ActiveOrders = 1 AND [ActiveOrders] IS NULL) OR ([ActiveOrde" & _
+                "rs] = @Original_ActiveOrders)) AND ((@IsNull_RealizedProfit = 1 AND [RealizedPro" & _
+                "fit] IS NULL) OR ([RealizedProfit] = @Original_RealizedProfit)) AND ((@IsNull_Ma" & _
+                "xAccumExp = 1 AND [MaxAccumExp] IS NULL) OR ([MaxAccumExp] = @Original_MaxAccumE" & _
+                "xp)));" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT ID, StratName, [Group], PortfolioAlgo, CalcAlgo, StopLossAlgo, Sp" & _
+                "read_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA," & _
+                " SE, SEA, SX, SXA, PriceSensitivity, Notes, Active, NumInstr, RiskAlgo, AutoLimi" & _
+                "tType, ExecAlgo, EntryAlgo, ExitAlgo, AutoExec, LegIn, TradeEntry, AutoLimits, R" & _
+                "ebalance, LAE, LAX, BidQ, BidP, AskP, AskQ, SAE, SAX, TargetBidP, TargetBidQ, Ta" & _
+                "rgetAskP, TargetAskQ, TargetProfit, Profit, ProfitDiff, CurrPosAveLE, CurrPosAve" & _
+                "SE, CurrExposure, MaxExposure, Updated, MaxLoss, ActiveOrders, RealizedProfit, M" & _
+                "axAccumExp FROM Strategies WHERE (ID = @ID) ORDER BY StratName, [Group]"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StratName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StratName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Group", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Group", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
@@ -2119,6 +4754,41 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PriceSensitivity", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PriceSensitivity", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Notes", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Notes", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Active", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Active", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NumInstr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NumInstr", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RiskAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RiskAlgo", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AutoLimitType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimitType", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ExecAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExecAlgo", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EntryAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EntryAlgo", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ExitAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExitAlgo", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AutoExec", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoExec", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LegIn", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LegIn", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TradeEntry", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TradeEntry", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AutoLimits", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimits", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Rebalance", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Rebalance", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAE", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAX", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidQ", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidP", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskP", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@AskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskQ", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAE", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAX", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TargetBidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidP", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TargetBidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidQ", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TargetAskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskP", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TargetAskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskQ", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TargetProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetProfit", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Profit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Profit", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProfitDiff", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProfitDiff", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CurrPosAveLE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveLE", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CurrPosAveSE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveSE", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CurrExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrExposure", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MaxExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxExposure", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Updated", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Updated", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MaxLoss", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxLoss", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ActiveOrders", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ActiveOrders", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RealizedProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RealizedProfit", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MaxAccumExp", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxAccumExp", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StratName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StratName", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_StratName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StratName", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
@@ -2162,6 +4832,76 @@ Namespace DataSet1TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Notes", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Notes", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Active", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Active", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Active", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Active", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NumInstr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NumInstr", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NumInstr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NumInstr", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RiskAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RiskAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RiskAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RiskAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoLimitType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimitType", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoLimitType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimitType", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ExecAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExecAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ExecAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExecAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_EntryAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EntryAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_EntryAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "EntryAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ExitAlgo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExitAlgo", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ExitAlgo", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ExitAlgo", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoExec", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoExec", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoExec", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoExec", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LegIn", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LegIn", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LegIn", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LegIn", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TradeEntry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TradeEntry", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TradeEntry", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TradeEntry", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AutoLimits", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimits", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AutoLimits", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AutoLimits", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Rebalance", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Rebalance", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Rebalance", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Rebalance", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LAE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LAX", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAX", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LAX", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BidQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BidP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BidP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AskP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AskQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AskQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SAE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SAE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SAX", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAX", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SAX", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SAX", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetBidP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetBidP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetBidQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetBidQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetBidQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetAskP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskP", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetAskP", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskP", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetAskQ", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskQ", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetAskQ", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetAskQ", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TargetProfit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetProfit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TargetProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TargetProfit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Profit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Profit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Profit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Profit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ProfitDiff", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProfitDiff", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProfitDiff", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProfitDiff", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrPosAveLE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveLE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrPosAveLE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveLE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrPosAveSE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveSE", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrPosAveSE", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrPosAveSE", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CurrExposure", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrExposure", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CurrExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CurrExposure", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxExposure", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxExposure", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxExposure", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxExposure", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Updated", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Updated", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Updated", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Updated", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxLoss", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxLoss", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxLoss", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxLoss", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ActiveOrders", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ActiveOrders", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ActiveOrders", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ActiveOrders", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RealizedProfit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RealizedProfit", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RealizedProfit", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RealizedProfit", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaxAccumExp", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxAccumExp", Global.System.Data.DataRowVersion.Original, True, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaxAccumExp", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaxAccumExp", Global.System.Data.DataRowVersion.Original, False, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
 
@@ -2180,8 +4920,14 @@ Namespace DataSet1TableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ID, StratName, [Group], PortfolioAlgo, CalcAlgo, StopLossAlgo, Spre" & _
                 "ad_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, S" & _
-                "E, SEA, SX, SXA, PriceSensitivity, Notes, Active" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Strategies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WH" & _
-                "ERE        (StratName = @StratName)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY StratName, [Group]"
+                "E, SEA, SX, SXA, PriceSensitivity, Notes, Active, NumInstr, RiskAlgo, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "        " & _
+                "                 AutoLimitType, ExecAlgo, EntryAlgo, ExitAlgo, AutoExec, LegIn, " & _
+                "TradeEntry, AutoLimits, Rebalance, LAE, LAX, BidQ, BidP, AskP, AskQ, SAE, SAX, T" & _
+                "argetBidP, TargetBidQ, TargetAskP, TargetAskQ, TargetProfit, Profit, ProfitDiff," & _
+                " " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         CurrPosAveLE, CurrPosAveSE, CurrExposure, MaxExposur" & _
+                "e, Updated, MaxLoss, ActiveOrders, RealizedProfit, MaxAccumExp" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            " & _
+                "Strategies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (StratName = @StratName) AND ([Group] = N'MAIN-CONTROL'" & _
+                ") and  (StratName IS NOT NULL)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY StratName, [Group]"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@StratName", Global.System.Data.SqlDbType.NVarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, "StratName", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub
@@ -2274,7 +5020,42 @@ Namespace DataSet1TableAdapters
                     ByVal Original_SXA As Global.System.Nullable(Of Double), _
                     ByVal Original_PriceSensitivity As Global.System.Nullable(Of Double), _
                     ByVal Original_Notes As String, _
-                    ByVal Original_Active As Global.System.Nullable(Of Boolean)) As Integer
+                    ByVal Original_Active As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_NumInstr As Global.System.Nullable(Of Integer), _
+                    ByVal Original_RiskAlgo As String, _
+                    ByVal Original_AutoLimitType As String, _
+                    ByVal Original_ExecAlgo As String, _
+                    ByVal Original_EntryAlgo As String, _
+                    ByVal Original_ExitAlgo As String, _
+                    ByVal Original_AutoExec As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LegIn As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_TradeEntry As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_AutoLimits As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_Rebalance As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_LAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_Profit As Global.System.Nullable(Of Double), _
+                    ByVal Original_ProfitDiff As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveLE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveSE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_Updated As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_MaxLoss As Global.System.Nullable(Of Double), _
+                    ByVal Original_ActiveOrders As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_RealizedProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxAccumExp As Global.System.Nullable(Of Double)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID, Integer)
             If (Original_StratName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
@@ -2423,6 +5204,251 @@ Namespace DataSet1TableAdapters
                 Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
             End If
+            If (Original_NumInstr.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_NumInstr.Value, Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RiskAlgo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(46).Value = CType(Original_RiskAlgo, String)
+            End If
+            If (Original_AutoLimitType Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(48).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(Original_AutoLimitType, String)
+            End If
+            If (Original_ExecAlgo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = CType(Original_ExecAlgo, String)
+            End If
+            If (Original_EntryAlgo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = CType(Original_EntryAlgo, String)
+            End If
+            If (Original_ExitAlgo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(54).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(Original_ExitAlgo, String)
+            End If
+            If (Original_AutoExec.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(Original_AutoExec.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(56).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LegIn.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(58).Value = CType(Original_LegIn.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(58).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TradeEntry.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(Original_TradeEntry.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(60).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AutoLimits.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(61).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(62).Value = CType(Original_AutoLimits.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(61).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(62).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Rebalance.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(Original_Rebalance.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(64).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LAE.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = CType(Original_LAE.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LAX.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = CType(Original_LAX.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BidQ.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(69).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(70).Value = CType(Original_BidQ.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(69).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(70).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BidP.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(71).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(72).Value = CType(Original_BidP.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(71).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(72).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AskP.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(73).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(74).Value = CType(Original_AskP.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(73).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(74).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AskQ.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(Original_AskQ.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(76).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SAE.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(Original_SAE.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(78).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SAX.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(79).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(80).Value = CType(Original_SAX.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(79).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(80).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetBidP.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(Original_TargetBidP.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(82).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetBidQ.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(83).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(84).Value = CType(Original_TargetBidQ.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(83).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(84).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetAskP.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(Original_TargetAskP.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(86).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetAskQ.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(87).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(88).Value = CType(Original_TargetAskQ.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(87).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(88).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetProfit.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(89).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(90).Value = CType(Original_TargetProfit.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(89).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(90).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Profit.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(91).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(92).Value = CType(Original_Profit.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(91).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(92).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProfitDiff.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(93).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(94).Value = CType(Original_ProfitDiff.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(93).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(94).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrPosAveLE.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(95).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(96).Value = CType(Original_CurrPosAveLE.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(95).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(96).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrPosAveSE.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(98).Value = CType(Original_CurrPosAveSE.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(98).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrExposure.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(99).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(100).Value = CType(Original_CurrExposure.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(99).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(100).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxExposure.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(101).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(102).Value = CType(Original_MaxExposure.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(101).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(102).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Updated.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = CType(Original_Updated.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(103).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(104).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxLoss.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = CType(Original_MaxLoss.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(105).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(106).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ActiveOrders.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(107).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(108).Value = CType(Original_ActiveOrders.Value, Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(107).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(108).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RealizedProfit.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(109).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(110).Value = CType(Original_RealizedProfit.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(109).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(110).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxAccumExp.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(111).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(112).Value = CType(Original_MaxAccumExp.Value, Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(111).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(112).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2464,6 +5490,41 @@ Namespace DataSet1TableAdapters
                     ByVal PriceSensitivity As Global.System.Nullable(Of Double), _
                     ByVal Notes As String, _
                     ByVal Active As Global.System.Nullable(Of Boolean), _
+                    ByVal NumInstr As Global.System.Nullable(Of Integer), _
+                    ByVal RiskAlgo As String, _
+                    ByVal AutoLimitType As String, _
+                    ByVal ExecAlgo As String, _
+                    ByVal EntryAlgo As String, _
+                    ByVal ExitAlgo As String, _
+                    ByVal AutoExec As Global.System.Nullable(Of Boolean), _
+                    ByVal LegIn As Global.System.Nullable(Of Boolean), _
+                    ByVal TradeEntry As Global.System.Nullable(Of Boolean), _
+                    ByVal AutoLimits As Global.System.Nullable(Of Boolean), _
+                    ByVal Rebalance As Global.System.Nullable(Of Boolean), _
+                    ByVal LAE As Global.System.Nullable(Of Double), _
+                    ByVal LAX As Global.System.Nullable(Of Double), _
+                    ByVal BidQ As Global.System.Nullable(Of Double), _
+                    ByVal BidP As Global.System.Nullable(Of Double), _
+                    ByVal AskP As Global.System.Nullable(Of Double), _
+                    ByVal AskQ As Global.System.Nullable(Of Double), _
+                    ByVal SAE As Global.System.Nullable(Of Double), _
+                    ByVal SAX As Global.System.Nullable(Of Double), _
+                    ByVal TargetBidP As Global.System.Nullable(Of Double), _
+                    ByVal TargetBidQ As Global.System.Nullable(Of Double), _
+                    ByVal TargetAskP As Global.System.Nullable(Of Double), _
+                    ByVal TargetAskQ As Global.System.Nullable(Of Double), _
+                    ByVal TargetProfit As Global.System.Nullable(Of Double), _
+                    ByVal Profit As Global.System.Nullable(Of Double), _
+                    ByVal ProfitDiff As Global.System.Nullable(Of Double), _
+                    ByVal CurrPosAveLE As Global.System.Nullable(Of Double), _
+                    ByVal CurrPosAveSE As Global.System.Nullable(Of Double), _
+                    ByVal CurrExposure As Global.System.Nullable(Of Double), _
+                    ByVal MaxExposure As Global.System.Nullable(Of Double), _
+                    ByVal Updated As Global.System.Nullable(Of Boolean), _
+                    ByVal MaxLoss As Global.System.Nullable(Of Double), _
+                    ByVal ActiveOrders As Global.System.Nullable(Of Boolean), _
+                    ByVal RealizedProfit As Global.System.Nullable(Of Double), _
+                    ByVal MaxAccumExp As Global.System.Nullable(Of Double), _
                     ByVal Original_ID As Integer, _
                     ByVal Original_StratName As String, _
                     ByVal Original_Group As String, _
@@ -2486,6 +5547,41 @@ Namespace DataSet1TableAdapters
                     ByVal Original_PriceSensitivity As Global.System.Nullable(Of Double), _
                     ByVal Original_Notes As String, _
                     ByVal Original_Active As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_NumInstr As Global.System.Nullable(Of Integer), _
+                    ByVal Original_RiskAlgo As String, _
+                    ByVal Original_AutoLimitType As String, _
+                    ByVal Original_ExecAlgo As String, _
+                    ByVal Original_EntryAlgo As String, _
+                    ByVal Original_ExitAlgo As String, _
+                    ByVal Original_AutoExec As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LegIn As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_TradeEntry As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_AutoLimits As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_Rebalance As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_LAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_Profit As Global.System.Nullable(Of Double), _
+                    ByVal Original_ProfitDiff As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveLE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveSE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_Updated As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_MaxLoss As Global.System.Nullable(Of Double), _
+                    ByVal Original_ActiveOrders As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_RealizedProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxAccumExp As Global.System.Nullable(Of Double), _
                     ByVal ID As Integer) As Integer
             If (StratName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -2592,155 +5688,575 @@ Namespace DataSet1TableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_ID, Integer)
-            If (Original_StratName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1, Object)
+            If (NumInstr.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(NumInstr.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            If (RiskAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(RiskAlgo, String)
+            End If
+            If (AutoLimitType Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_StratName, String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(AutoLimitType, String)
             End If
-            If (Original_Group Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1, Object)
+            If (ExecAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(ExecAlgo, String)
+            End If
+            If (EntryAlgo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Group, String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(EntryAlgo, String)
             End If
-            If (Original_PortfolioAlgo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1, Object)
+            If (ExitAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(ExitAlgo, String)
+            End If
+            If (AutoExec.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(AutoExec.Value, Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_PortfolioAlgo, String)
             End If
-            If (Original_CalcAlgo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1, Object)
+            If (LegIn.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(LegIn.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            End If
+            If (TradeEntry.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(TradeEntry.Value, Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_CalcAlgo, String)
             End If
-            If (Original_StopLossAlgo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1, Object)
+            If (AutoLimits.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(AutoLimits.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            If (Rebalance.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Rebalance.Value, Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_StopLossAlgo, String)
             End If
-            If (Original_Spread_or_Ratio Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1, Object)
+            If (LAE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(LAE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            End If
+            If (LAX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(LAX.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_Spread_or_Ratio, String)
             End If
-            If (Original_Direction Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1, Object)
+            If (BidQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(BidQ.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (BidP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(BidP.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_Direction, String)
             End If
-            If (Original_RecordHist.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_RecordHist.Value, Boolean)
+            If (AskP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(AskP.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            If (AskQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(AskQ.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             End If
-            If (Original_PriceScale.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_PriceScale.Value, Double)
+            If (SAE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(SAE.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+            End If
+            If (SAX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(SAX.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
-            If (Original_SpreadScale.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_SpreadScale.Value, Double)
+            If (TargetBidP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(TargetBidP.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+            End If
+            If (TargetBidQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(TargetBidQ.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             End If
-            If (Original_LE.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_LE.Value, Double)
+            If (TargetAskP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(TargetAskP.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+            End If
+            If (TargetAskQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(TargetAskQ.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             End If
-            If (Original_LEA.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_LEA.Value, Double)
+            If (TargetProfit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(TargetProfit.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
+            If (Profit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Profit.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             End If
-            If (Original_LX.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_LX.Value, Double)
+            If (ProfitDiff.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(ProfitDiff.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+            End If
+            If (CurrPosAveLE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(CurrPosAveLE.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             End If
-            If (Original_LXA.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_LXA.Value, Double)
+            If (CurrPosAveSE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(CurrPosAveSE.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+            End If
+            If (CurrExposure.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(CurrExposure.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             End If
-            If (Original_SE.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_SE.Value, Double)
+            If (MaxExposure.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(MaxExposure.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
+            End If
+            If (Updated.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Updated.Value, Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             End If
-            If (Original_SEA.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_SEA.Value, Double)
+            If (MaxLoss.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(MaxLoss.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+            End If
+            If (ActiveOrders.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(ActiveOrders.Value, Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
             End If
-            If (Original_SX.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_SX.Value, Double)
+            If (RealizedProfit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(RealizedProfit.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
+            End If
+            If (MaxAccumExp.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(MaxAccumExp.Value, Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
             End If
-            If (Original_SXA.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_SXA.Value, Double)
+            Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_ID, Integer)
+            If (Original_StratName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_StratName, String)
+            End If
+            If (Original_Group Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_Group, String)
+            End If
+            If (Original_PortfolioAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_PortfolioAlgo, String)
+            End If
+            If (Original_CalcAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_CalcAlgo, String)
+            End If
+            If (Original_StopLossAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_StopLossAlgo, String)
+            End If
+            If (Original_Spread_or_Ratio Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_Spread_or_Ratio, String)
+            End If
+            If (Original_Direction Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_Direction, String)
+            End If
+            If (Original_RecordHist.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_RecordHist.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PriceScale.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(Original_PriceScale.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SpreadScale.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Original_SpreadScale.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(Original_LE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LEA.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(Original_LEA.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(Original_LX.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LXA.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(Original_LXA.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(84).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(Original_SE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(86).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SEA.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(Original_SEA.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(88).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(Original_SX.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(90).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SXA.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(Original_SXA.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(92).Value = Global.System.DBNull.Value
             End If
             If (Original_PriceSensitivity.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_PriceSensitivity.Value, Double)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(Original_PriceSensitivity.Value, Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(94).Value = Global.System.DBNull.Value
             End If
             If (Original_Notes Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(96).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_Notes, String)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(Original_Notes, String)
             End If
             If (Original_Active.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_Active.Value, Boolean)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(Original_Active.Value, Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(98).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(ID, Integer)
+            If (Original_NumInstr.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(Original_NumInstr.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(100).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RiskAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(102).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(Original_RiskAlgo, String)
+            End If
+            If (Original_AutoLimitType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(104).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(Original_AutoLimitType, String)
+            End If
+            If (Original_ExecAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(106).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(Original_ExecAlgo, String)
+            End If
+            If (Original_EntryAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(108).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(Original_EntryAlgo, String)
+            End If
+            If (Original_ExitAlgo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(110).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(Original_ExitAlgo, String)
+            End If
+            If (Original_AutoExec.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(Original_AutoExec.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(112).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LegIn.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(Original_LegIn.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(114).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TradeEntry.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(Original_TradeEntry.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(116).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AutoLimits.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(Original_AutoLimits.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(118).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Rebalance.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(Original_Rebalance.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(120).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LAE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(Original_LAE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(122).Value = Global.System.DBNull.Value
+            End If
+            If (Original_LAX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(Original_LAX.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(124).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BidQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(Original_BidQ.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(126).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BidP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(Original_BidP.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(128).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AskP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(Original_AskP.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(130).Value = Global.System.DBNull.Value
+            End If
+            If (Original_AskQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(Original_AskQ.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(132).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SAE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(Original_SAE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(134).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SAX.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(Original_SAX.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(136).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetBidP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(Original_TargetBidP.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(138).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetBidQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(Original_TargetBidQ.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(140).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetAskP.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(Original_TargetAskP.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(142).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetAskQ.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(Original_TargetAskQ.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(144).Value = Global.System.DBNull.Value
+            End If
+            If (Original_TargetProfit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(Original_TargetProfit.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(146).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Profit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(Original_Profit.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(148).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ProfitDiff.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(Original_ProfitDiff.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(150).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrPosAveLE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(Original_CurrPosAveLE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(152).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrPosAveSE.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(154).Value = CType(Original_CurrPosAveSE.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(154).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CurrExposure.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(Original_CurrExposure.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(156).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxExposure.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(158).Value = CType(Original_MaxExposure.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(157).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(158).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Updated.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(160).Value = CType(Original_Updated.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(159).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(160).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxLoss.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(162).Value = CType(Original_MaxLoss.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(161).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(162).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ActiveOrders.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(163).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(164).Value = CType(Original_ActiveOrders.Value, Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(163).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(164).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RealizedProfit.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(165).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(166).Value = CType(Original_RealizedProfit.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(165).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(166).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MaxAccumExp.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(167).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(168).Value = CType(Original_MaxAccumExp.Value, Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(167).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(168).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(169).Value = CType(ID, Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2782,6 +6298,41 @@ Namespace DataSet1TableAdapters
                     ByVal PriceSensitivity As Global.System.Nullable(Of Double), _
                     ByVal Notes As String, _
                     ByVal Active As Global.System.Nullable(Of Boolean), _
+                    ByVal NumInstr As Global.System.Nullable(Of Integer), _
+                    ByVal RiskAlgo As String, _
+                    ByVal AutoLimitType As String, _
+                    ByVal ExecAlgo As String, _
+                    ByVal EntryAlgo As String, _
+                    ByVal ExitAlgo As String, _
+                    ByVal AutoExec As Global.System.Nullable(Of Boolean), _
+                    ByVal LegIn As Global.System.Nullable(Of Boolean), _
+                    ByVal TradeEntry As Global.System.Nullable(Of Boolean), _
+                    ByVal AutoLimits As Global.System.Nullable(Of Boolean), _
+                    ByVal Rebalance As Global.System.Nullable(Of Boolean), _
+                    ByVal LAE As Global.System.Nullable(Of Double), _
+                    ByVal LAX As Global.System.Nullable(Of Double), _
+                    ByVal BidQ As Global.System.Nullable(Of Double), _
+                    ByVal BidP As Global.System.Nullable(Of Double), _
+                    ByVal AskP As Global.System.Nullable(Of Double), _
+                    ByVal AskQ As Global.System.Nullable(Of Double), _
+                    ByVal SAE As Global.System.Nullable(Of Double), _
+                    ByVal SAX As Global.System.Nullable(Of Double), _
+                    ByVal TargetBidP As Global.System.Nullable(Of Double), _
+                    ByVal TargetBidQ As Global.System.Nullable(Of Double), _
+                    ByVal TargetAskP As Global.System.Nullable(Of Double), _
+                    ByVal TargetAskQ As Global.System.Nullable(Of Double), _
+                    ByVal TargetProfit As Global.System.Nullable(Of Double), _
+                    ByVal Profit As Global.System.Nullable(Of Double), _
+                    ByVal ProfitDiff As Global.System.Nullable(Of Double), _
+                    ByVal CurrPosAveLE As Global.System.Nullable(Of Double), _
+                    ByVal CurrPosAveSE As Global.System.Nullable(Of Double), _
+                    ByVal CurrExposure As Global.System.Nullable(Of Double), _
+                    ByVal MaxExposure As Global.System.Nullable(Of Double), _
+                    ByVal Updated As Global.System.Nullable(Of Boolean), _
+                    ByVal MaxLoss As Global.System.Nullable(Of Double), _
+                    ByVal ActiveOrders As Global.System.Nullable(Of Boolean), _
+                    ByVal RealizedProfit As Global.System.Nullable(Of Double), _
+                    ByVal MaxAccumExp As Global.System.Nullable(Of Double), _
                     ByVal Original_ID As Integer, _
                     ByVal Original_StratName As String, _
                     ByVal Original_Group As String, _
@@ -2803,8 +6354,43 @@ Namespace DataSet1TableAdapters
                     ByVal Original_SXA As Global.System.Nullable(Of Double), _
                     ByVal Original_PriceSensitivity As Global.System.Nullable(Of Double), _
                     ByVal Original_Notes As String, _
-                    ByVal Original_Active As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(StratName, Group, PortfolioAlgo, CalcAlgo, StopLossAlgo, Spread_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, SE, SEA, SX, SXA, PriceSensitivity, Notes, Active, Original_ID, Original_StratName, Original_Group, Original_PortfolioAlgo, Original_CalcAlgo, Original_StopLossAlgo, Original_Spread_or_Ratio, Original_Direction, Original_RecordHist, Original_PriceScale, Original_SpreadScale, Original_LE, Original_LEA, Original_LX, Original_LXA, Original_SE, Original_SEA, Original_SX, Original_SXA, Original_PriceSensitivity, Original_Notes, Original_Active, Original_ID)
+                    ByVal Original_Active As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_NumInstr As Global.System.Nullable(Of Integer), _
+                    ByVal Original_RiskAlgo As String, _
+                    ByVal Original_AutoLimitType As String, _
+                    ByVal Original_ExecAlgo As String, _
+                    ByVal Original_EntryAlgo As String, _
+                    ByVal Original_ExitAlgo As String, _
+                    ByVal Original_AutoExec As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LegIn As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_TradeEntry As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_AutoLimits As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_Rebalance As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_LAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_LAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_BidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_AskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAE As Global.System.Nullable(Of Double), _
+                    ByVal Original_SAX As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetBidQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskP As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetAskQ As Global.System.Nullable(Of Double), _
+                    ByVal Original_TargetProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_Profit As Global.System.Nullable(Of Double), _
+                    ByVal Original_ProfitDiff As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveLE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrPosAveSE As Global.System.Nullable(Of Double), _
+                    ByVal Original_CurrExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxExposure As Global.System.Nullable(Of Double), _
+                    ByVal Original_Updated As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_MaxLoss As Global.System.Nullable(Of Double), _
+                    ByVal Original_ActiveOrders As Global.System.Nullable(Of Boolean), _
+                    ByVal Original_RealizedProfit As Global.System.Nullable(Of Double), _
+                    ByVal Original_MaxAccumExp As Global.System.Nullable(Of Double)) As Integer
+            Return Me.Update(StratName, Group, PortfolioAlgo, CalcAlgo, StopLossAlgo, Spread_or_Ratio, Direction, RecordHist, PriceScale, SpreadScale, LE, LEA, LX, LXA, SE, SEA, SX, SXA, PriceSensitivity, Notes, Active, NumInstr, RiskAlgo, AutoLimitType, ExecAlgo, EntryAlgo, ExitAlgo, AutoExec, LegIn, TradeEntry, AutoLimits, Rebalance, LAE, LAX, BidQ, BidP, AskP, AskQ, SAE, SAX, TargetBidP, TargetBidQ, TargetAskP, TargetAskQ, TargetProfit, Profit, ProfitDiff, CurrPosAveLE, CurrPosAveSE, CurrExposure, MaxExposure, Updated, MaxLoss, ActiveOrders, RealizedProfit, MaxAccumExp, Original_ID, Original_StratName, Original_Group, Original_PortfolioAlgo, Original_CalcAlgo, Original_StopLossAlgo, Original_Spread_or_Ratio, Original_Direction, Original_RecordHist, Original_PriceScale, Original_SpreadScale, Original_LE, Original_LEA, Original_LX, Original_LXA, Original_SE, Original_SEA, Original_SX, Original_SXA, Original_PriceSensitivity, Original_Notes, Original_Active, Original_NumInstr, Original_RiskAlgo, Original_AutoLimitType, Original_ExecAlgo, Original_EntryAlgo, Original_ExitAlgo, Original_AutoExec, Original_LegIn, Original_TradeEntry, Original_AutoLimits, Original_Rebalance, Original_LAE, Original_LAX, Original_BidQ, Original_BidP, Original_AskP, Original_AskQ, Original_SAE, Original_SAX, Original_TargetBidP, Original_TargetBidQ, Original_TargetAskP, Original_TargetAskQ, Original_TargetProfit, Original_Profit, Original_ProfitDiff, Original_CurrPosAveLE, Original_CurrPosAveSE, Original_CurrExposure, Original_MaxExposure, Original_Updated, Original_MaxLoss, Original_ActiveOrders, Original_RealizedProfit, Original_MaxAccumExp, Original_ID)
         End Function
     End Class
 
@@ -2952,8 +6538,9 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT DISTINCT StratName" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Strategies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (StratName IS" & _
-                " NOT NULL)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY StratName"
+            Me._commandCollection(0).CommandText = "SELECT DISTINCT StratName" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Strategies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (StratName LI" & _
+                "KE N'AB-%') OR" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         (StratName LIKE N'HC-%')" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY Stra" & _
+                "tName"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
@@ -2972,6 +6559,241 @@ Namespace DataSet1TableAdapters
     End Class
 
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
+     Global.System.ComponentModel.ToolboxItem(True), _
+     Global.System.ComponentModel.DataObjectAttribute(True), _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+    Partial Public Class BLMDataTableAdapter
+        Inherits Global.System.ComponentModel.Component
+
+        Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
+
+        Private _connection As Global.System.Data.OleDb.OleDbConnection
+
+        Private _transaction As Global.System.Data.OleDb.OleDbTransaction
+
+        Private _commandCollection() As Global.System.Data.OleDb.OleDbCommand
+
+        Private _clearBeforeFill As Boolean
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub New()
+            MyBase.New()
+            Me.ClearBeforeFill = True
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.OleDb.OleDbDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter()
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Connection() As Global.System.Data.OleDb.OleDbConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection()
+                End If
+                Return Me._connection
+            End Get
+            Set(value As Global.System.Data.OleDb.OleDbConnection)
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i), Global.System.Data.OleDb.OleDbCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Property Transaction() As Global.System.Data.OleDb.OleDbTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set(value As Global.System.Data.OleDb.OleDbTransaction)
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing) _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.OleDb.OleDbCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection()
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set(value As Boolean)
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "BLMData"
+            tableMapping.ColumnMappings.Add("StratName", "StratName")
+            tableMapping.ColumnMappings.Add("Last", "Last")
+            tableMapping.ColumnMappings.Add("%1d", "%1d")
+            tableMapping.ColumnMappings.Add("30D Vol", "30D Vol")
+            tableMapping.ColumnMappings.Add("200D Vol", "200D Vol")
+            tableMapping.ColumnMappings.Add("30D Hi", "30D Hi")
+            tableMapping.ColumnMappings.Add("52w Hi", "52w Hi")
+            tableMapping.ColumnMappings.Add("30D Lo", "30D Lo")
+            tableMapping.ColumnMappings.Add("52w Lo", "52w Lo")
+            tableMapping.ColumnMappings.Add("RSI 14d", "RSI 14d")
+            tableMapping.ColumnMappings.Add("MA 10D", "MA 10D")
+            tableMapping.ColumnMappings.Add("MA 30D", "MA 30D")
+            tableMapping.ColumnMappings.Add("MA 200D", "MA 200D")
+            tableMapping.ColumnMappings.Add("Std Dev", "Std Dev")
+            tableMapping.ColumnMappings.Add("Bol L", "Bol L")
+            tableMapping.ColumnMappings.Add("Bol U", "Bol U")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `BLMData` (`StratName`, `Last`, `%1d`, `30D Vol`, `200D Vol`, `30D Hi" & _
+                "`, `52w Hi`, `30D Lo`, `52w Lo`, `RSI 14d`, `MA 10D`, `MA 30D`, `MA 200D`, `Std " & _
+                "Dev`, `Bol L`, `Bol U`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StratName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "StratName", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Last", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Last", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("%1d", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "%1d", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("30D_Vol", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "30D Vol", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("200D_Vol", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "200D Vol", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("30D_Hi", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "30D Hi", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("52w_Hi", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "52w Hi", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("30D_Lo", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "30D Lo", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("52w_Lo", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "52w Lo", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RSI_14d", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RSI 14d", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MA_10D", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MA 10D", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MA_30D", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MA 30D", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MA_200D", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MA 200D", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Std_Dev", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Std Dev", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bol_L", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bol L", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bol_U", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bol U", Global.System.Data.DataRowVersion.Current, False, Nothing))
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.OleDb.OleDbConnection()
+            Me._connection.ConnectionString = Global.Strategy_Controls.My.MySettings.Default.BaseConnectionString
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        StratName, [Last], [%1d], [30D Vol], [200D Vol], [30D Hi], [52w Hi]" & _
+                ", [30D Lo], [52w Lo], [RSI 14d], [MA 10D], [MA 30D], [MA 200D], [Std Dev], [Bol " & _
+                "L], [Bol U]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            BLMData" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (StratName = ?)"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("StratName", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "StratName", Global.System.Data.DataRowVersion.Current, False, Nothing))
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
+        Public Overridable Overloads Function Fill(ByVal dataTable As DataSet1.BLMDataDataTable, ByVal StratName As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (StratName Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(StratName, String)
+            End If
+            If (Me.ClearBeforeFill = True) Then
+                dataTable.Clear()
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataTable As DataSet1.BLMDataDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataSet As DataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "BLMData")
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
+        Public Overridable Overloads Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+    End Class
+
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"), _
@@ -2985,6 +6807,8 @@ Namespace DataSet1TableAdapters
         Private _updateOrder As UpdateOrderOption
 
         Private _strategiesTableAdapter As StrategiesTableAdapter
+
+        Private _bLMDataTableAdapter As BLMDataTableAdapter
 
         Private _backupDataSetBeforeUpdate As Boolean
 
@@ -3016,6 +6840,20 @@ Namespace DataSet1TableAdapters
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" & _
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" & _
+            "a", "System.Drawing.Design.UITypeEditor")> _
+        Public Property BLMDataTableAdapter() As BLMDataTableAdapter
+            Get
+                Return Me._bLMDataTableAdapter
+            End Get
+            Set(value As BLMDataTableAdapter)
+                Me._bLMDataTableAdapter = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -3038,6 +6876,10 @@ Namespace DataSet1TableAdapters
                             AndAlso (Not (Me._strategiesTableAdapter.Connection) Is Nothing)) Then
                     Return Me._strategiesTableAdapter.Connection
                 End If
+                If ((Not (Me._bLMDataTableAdapter) Is Nothing) _
+                            AndAlso (Not (Me._bLMDataTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._bLMDataTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set(value As Global.System.Data.IDbConnection)
@@ -3052,6 +6894,9 @@ Namespace DataSet1TableAdapters
             Get
                 Dim count As Integer = 0
                 If (Not (Me._strategiesTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -3074,6 +6919,15 @@ Namespace DataSet1TableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.BLMData.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing) _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._bLMDataTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
 
@@ -3092,6 +6946,14 @@ Namespace DataSet1TableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.BLMData.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing) _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._bLMDataTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
 
@@ -3102,6 +6964,14 @@ Namespace DataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.BLMData.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing) _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._bLMDataTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._strategiesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Strategies.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing) _
@@ -3156,6 +7026,11 @@ Namespace DataSet1TableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" & _
                         "tring.")
             End If
+            If ((Not (Me._bLMDataTableAdapter) Is Nothing) _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._bLMDataTableAdapter.Connection) = False)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" & _
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" & _
@@ -3195,6 +7070,15 @@ Namespace DataSet1TableAdapters
                     If Me._strategiesTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._strategiesTableAdapter.Adapter.AcceptChangesDuringUpdate = False
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._strategiesTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._bLMDataTableAdapter, Me._bLMDataTableAdapter.Connection)
+                    Me._bLMDataTableAdapter.Connection = CType(workConnection, Global.System.Data.OleDb.OleDbConnection)
+                    Me._bLMDataTableAdapter.Transaction = CType(workTransaction, Global.System.Data.OleDb.OleDbTransaction)
+                    If Me._bLMDataTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._bLMDataTableAdapter.Adapter.AcceptChangesDuringUpdate = False
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._bLMDataTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -3260,6 +7144,10 @@ Namespace DataSet1TableAdapters
                 If (Not (Me._strategiesTableAdapter) Is Nothing) Then
                     Me._strategiesTableAdapter.Connection = CType(revertConnections(Me._strategiesTableAdapter), Global.System.Data.SqlClient.SqlConnection)
                     Me._strategiesTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._bLMDataTableAdapter) Is Nothing) Then
+                    Me._bLMDataTableAdapter.Connection = CType(revertConnections(Me._bLMDataTableAdapter), Global.System.Data.OleDb.OleDbConnection)
+                    Me._bLMDataTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

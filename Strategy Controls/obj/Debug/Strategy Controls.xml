@@ -27,6 +27,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Strategy_Controls.DataSet1.BLMDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Strategy_Controls.DataSet1.StrategiesRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -35,11 +39,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Strategy_Controls.DataSet1.BLMDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Strategy_Controls.DataSet1.StrategiesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:Strategy_Controls.DataSet1.Strategies1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Strategy_Controls.DataSet1.BLMDataRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -52,6 +64,10 @@ Represents a strongly typed in-memory cache of data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:Strategy_Controls.DataSet1TableAdapters.Strategies1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Strategy_Controls.DataSet1TableAdapters.BLMDataTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
